@@ -164,6 +164,43 @@ Hemos terminado de instalar la aplicación, ahora iremos a las pruebas de funcio
 
 ### Funcionamiento 
 
+Para mostrar el funcionamiento tenemos los siguientes frames dentro del paquete *Listos*.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/aab56315-cb2c-4188-80d2-33313b691d04)
+
+
+Cada uno tiene una función diferente, pero todas se relacionan, hablaremos en general del MVC (Modelo Vista Controlador)
+
+### Modelo
+En la parte del 'Modelo' tenemos en cuenta lo siguiente
+Se hace uso de una base de datos 
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d15613e5-2fdb-42a9-9923-d3cae025a17c)
+
+Al igual que una conexión para enlazar el programa a MySQL.
+
+```java
+  
+  public class Conexion {
+    Connection con;
+    // Constantes para la URL de conexión, el usuario y la contraseña de la base de datos
+    public static final String URL = "jdbc:mysql://localhost:3306/gimnasio3";
+    public static final String USER = "root";
+    public static final String CLAVE = "270404110408140211";
+
+    // Método que intenta establecer una conexión con la base de datos
+    public Connection conectar() {
+        try {
+            con = DriverManager.getConnection(URL, USER, CLAVE);
+        } catch (SQLException e) {
+            System.out.println("Error :" + e);
+        }
+        return con;
+    }
+}
+```
+
+
 
 
 
