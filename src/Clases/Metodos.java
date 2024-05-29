@@ -95,7 +95,7 @@ public class Metodos {
                         + "JOIN Empleado e ON p.id_persona = e.id_empleado "
                         + "LEFT JOIN Asalariado a ON e.id_empleado = a.id_asalariado "
                         + "LEFT JOIN Admin ad ON e.id_empleado = ad.id_admin "
-                        + "WHERE e.correo_empleado = ?";
+                        + "WHERE e.correo_empleado = ? and e.fecha_despido is null";
 
                 // Obtener la conexión y preparar la consulta
                 ps = con.prepareStatement(consulta);
