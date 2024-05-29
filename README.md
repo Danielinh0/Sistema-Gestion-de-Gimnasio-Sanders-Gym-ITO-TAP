@@ -119,8 +119,19 @@ Nos mostrara la siguiente ventana en la cual nos debemos dirigir al apartado de 
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/63678d7a-6219-4865-838e-b6087f27822f)
 
+Una vez vaciada las librerias rotas, tendremos que meter las librerías nuevas manualmente con el signo de “+” que se encuentra al lado izquierdo de “remove”. En cada librería vienen únicamente los jar´s que se ocuparon y esos mismos son los que van a agregar.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/4c15bcaa-19a4-4366-aabe-93f04ed6aebe)
 
 
+Para agregar dichos jar se hace lo siguiente clic al botón “+” nos abre esa pequeña ventana en donde presionaremos “Add JAR/Folder”.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/57d92b12-c384-425b-9b02-4e0e77db2067)
+
+
+Buscaremos la ubicación de estas librerías anteriormente descargadas.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/061d0cbe-9bfd-4db5-9ff7-343088261b40)
 
 
 
