@@ -163,7 +163,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         btnEditarA = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        btnEditarA1 = new javax.swing.JLabel();
         Asalariados = new javax.swing.JPanel();
         Administradores1 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
@@ -954,7 +954,7 @@ public class Admin extends javax.swing.JFrame {
         btnRegistro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (1).png"))); // NOI18N
         btnRegistro1.setText(" Registrar");
         btnRegistro1.setToolTipText("");
-        btnRegistro1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRegistro1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRegistro1.setOpaque(true);
         btnRegistro1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1017,7 +1017,7 @@ public class Admin extends javax.swing.JFrame {
         btnEditarA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/editar.png"))); // NOI18N
         btnEditarA.setText(" Editar");
         btnEditarA.setToolTipText("");
-        btnEditarA.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditarA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditarA.setOpaque(true);
         btnEditarA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1030,16 +1030,18 @@ public class Admin extends javax.swing.JFrame {
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel54.setText("Buscar por Nombre");
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(54, 33, 89));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/enviar-datos.png"))); // NOI18N
-        jButton5.setText("Crear y Enviar PDF");
-        jButton5.setBorder(null);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton5.setOpaque(true);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        btnEditarA1.setBackground(new java.awt.Color(255, 255, 255));
+        btnEditarA1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEditarA1.setForeground(new java.awt.Color(54, 33, 89));
+        btnEditarA1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnEditarA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/enviar-datos.png"))); // NOI18N
+        btnEditarA1.setText(" Crear y Enviar PDF");
+        btnEditarA1.setToolTipText("");
+        btnEditarA1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditarA1.setOpaque(true);
+        btnEditarA1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEditarA1MouseClicked(evt);
             }
         });
 
@@ -1062,35 +1064,36 @@ public class Admin extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1021, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AAdministradoresLayout.createSequentialGroup()
                             .addComponent(btnRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(51, 51, 51)
+                            .addGap(58, 58, 58)
                             .addComponent(btnEditarA, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(32, 32, 32)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(240, 240, 240))))
+                            .addGap(36, 36, 36)
+                            .addComponent(btnEditarA1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(149, 149, 149))))
                 .addGap(24, 24, 24))
         );
         AAdministradoresLayout.setVerticalGroup(
             AAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AAdministradoresLayout.createSequentialGroup()
-                .addComponent(Administradores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(AAdministradoresLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(AAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel38)
-                        .addGroup(AAdministradoresLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(txtBuscarA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel54))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(AAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditarA, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53))
+                    .addGroup(AAdministradoresLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(AAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel38)
+                                .addGroup(AAdministradoresLayout.createSequentialGroup()
+                                    .addGap(10, 10, 10)
+                                    .addComponent(txtBuscarA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel54))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                        .addGroup(AAdministradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditarA, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditarA1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38))
+                    .addComponent(Administradores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Empleados_Switch.addTab("Administrador", AAdministradores);
@@ -1279,7 +1282,7 @@ public class Admin extends javax.swing.JFrame {
         btnRegistroE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/registro (1).png"))); // NOI18N
         btnRegistroE.setText(" Registrar");
         btnRegistroE.setToolTipText("");
-        btnRegistroE.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRegistroE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRegistroE.setOpaque(true);
         btnRegistroE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1294,7 +1297,7 @@ public class Admin extends javax.swing.JFrame {
         btnEditarE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/editar.png"))); // NOI18N
         btnEditarE.setText(" Editar");
         btnEditarE.setToolTipText("");
-        btnEditarE.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditarE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditarE.setOpaque(true);
         btnEditarE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1360,7 +1363,7 @@ public class Admin extends javax.swing.JFrame {
         btnEnviar_EM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/enviar-datos.png"))); // NOI18N
         btnEnviar_EM.setText("Crear y Enviar PDF");
         btnEnviar_EM.setToolTipText("");
-        btnEnviar_EM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEnviar_EM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEnviar_EM.setOpaque(true);
         btnEnviar_EM.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3729,27 +3732,6 @@ public class Admin extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_btnEnviar_EMMouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        Clases.Metodos objetoRegistro = new Clases.Metodos();
-        
-        filaA = TablaAdministradores.getSelectedRow();
-        int id_A = Integer.parseInt((String) TablaAdministradores.getValueAt(filaA, 0)); ///////////////////---------------------------------IDPERsona
-        if (id_A != -1) {
-        } else {
-            JOptionPane.showMessageDialog(this, "Error al obtener el ID de la persona.", "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-
-        try {
-            objetoRegistro.crearPDFAdministrador(id_A);
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void btnEditar1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditar1MouseMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditar1MouseMoved
@@ -3777,6 +3759,26 @@ public class Admin extends javax.swing.JFrame {
     private void btnEditar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditar1MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditar1MouseExited
+
+    private void btnEditarA1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditarA1MouseClicked
+       Clases.Metodos objetoRegistro = new Clases.Metodos();
+        
+        filaA = TablaAdministradores.getSelectedRow();
+        int id_A = Integer.parseInt((String) TablaAdministradores.getValueAt(filaA, 0)); ///////////////////---------------------------------IDPERsona
+        if (id_A != -1) {
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al obtener el ID de la persona.", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+
+        try {
+            objetoRegistro.crearPDFAdministrador(id_A);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnEditarA1MouseClicked
 
     
     public static void main(String args[]) {
@@ -3848,6 +3850,7 @@ public class Admin extends javax.swing.JFrame {
     public javax.swing.JLabel btnEditar;
     public javax.swing.JLabel btnEditar1;
     private javax.swing.JLabel btnEditarA;
+    private javax.swing.JLabel btnEditarA1;
     private javax.swing.JLabel btnEditarE;
     private javax.swing.JLabel btnEditarG;
     private javax.swing.JLabel btnEditarM;
@@ -3866,7 +3869,6 @@ public class Admin extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cboSucursales1;
     public javax.swing.JComboBox<String> cboSucursalesE;
     private javax.swing.JComboBox<String> cboTurnoE;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
