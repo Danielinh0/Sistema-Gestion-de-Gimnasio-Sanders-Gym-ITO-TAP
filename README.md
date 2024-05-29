@@ -172,7 +172,7 @@ Para mostrar el funcionamiento tenemos los siguientes frames dentro del paquete 
 Cada uno tiene una función diferente, pero todas se relacionan, hablaremos en general del MVC (Modelo Vista Controlador)
 
 ### Modelo
-En la parte del 'Modelo' tenemos en cuenta lo siguiente
+En la parte del `Modelo` tenemos en cuenta lo siguiente
 Se hace uso de una base de datos 
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d15613e5-2fdb-42a9-9923-d3cae025a17c)
@@ -199,6 +199,61 @@ Al igual que una conexión para enlazar el programa a MySQL.
     }
 }
 ```
+
+
+Al igual que un metodo capaz de guardar estos datos dentro de esta base MySQL:
+```java
+public void GuardarDatosPersona(String Nombre, String A_Paterno, String A_Materno, String CURP, String Direccion, String Telefono, int Edad) {
+        try {
+            PreparedStatement ps = null;
+
+            // Crear una instancia de la clase Conexion
+            Clases.Conexion objetoConexion = new Clases.Conexion();
+
+            // Consulta SQL para insertar una nueva Persona en la tabla Persona
+            String consulta = "INSERT INTO Persona (Nombre, A_Paterno, A_Materno, CURP, Direccion, Telefono, Edad) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+            // Obtener la conexión y preparar la consulta
+            ps = objetoConexion.conectar().prepareStatement(consulta);
+
+            // Establecer los valores de los parámetros en la consulta
+            ps.setString(1, Nombre);
+            ps.setString(2, A_Paterno);
+            ps.setString(3, A_Materno);
+            ps.setString(4, CURP);
+            ps.setString(5, Direccion);
+            ps.setString(6, Telefono);
+            ps.setInt(7, Edad);
+
+            // Ejecutar la consulta de inserción
+            int filasAfectadas = ps.executeUpdate();
+
+            // Comprobar si se insertó el usuario correctamente
+            if (filasAfectadas <= 0) {
+                JOptionPane.showMessageDialog(null, "Error al registrar");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString());
+            System.out.println("Error" + e);
+        }
+    }
+```
+
+### Vista
+Para la parte de `Vista` lo siguiente es fundamental.
+
+Nos presenta una forma gráfica y a detalle cada característica de algún objeto en este caso dicho de otra forma en un `cliente`.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/25d7e2b0-614b-42ed-9a75-cf02652a1387)
+
+De la misma manera en un `Empleado` o `Administrador`, son mostrados de manera visual y a detalle en nuestro programa. Este mismo representa una interfaz de usuario y a su vez se encarga de mostrar los datos completos del modelo al usuario e interacciones del usuario.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/67e21261-ce00-42a0-981c-4e7cbd4ccc64)
+
+
+
+
 
 
 
