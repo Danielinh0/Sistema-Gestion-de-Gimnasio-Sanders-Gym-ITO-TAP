@@ -13,7 +13,7 @@ public class Conexion {
     Connection con;
     
     // Constantes para la URL de conexión, el usuario y la contraseña de la base de datos
-    public static final String URL = "jdbc:mysql://localhost:3306/gimnasio";
+    public static final String URL = "jdbc:mysql://localhost:3306/gimnasio1";
     public static final String USER = "root";
     public static final String CLAVE = "dominic";
 
