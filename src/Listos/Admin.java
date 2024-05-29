@@ -1066,9 +1066,9 @@ public class Admin extends javax.swing.JFrame {
                             .addComponent(btnRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(58, 58, 58)
                             .addComponent(btnEditarA, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(36, 36, 36)
+                            .addGap(50, 50, 50)
                             .addComponent(btnEditarA1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(149, 149, 149))))
+                            .addGap(135, 135, 135))))
                 .addGap(24, 24, 24))
         );
         AAdministradoresLayout.setVerticalGroup(
@@ -1196,7 +1196,7 @@ public class Admin extends javax.swing.JFrame {
 
         jLabel48.setText("Rol");
 
-        cboRolE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Instructor", "Recepcionista", "Conserje" }));
+        cboRolE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Recepcionista", "Entrenador Personal", "Instructor de Clases Grupales", "Entrenador de Fuerza y Acondicionamiento", "Nutricionista o Dietista", "Personal de Mantenimiento y Limpieza (Conserje)", "Gerente de Ventas y Marketing", "Especialista en Atención al Cliente", "Personal de Seguridad", "Coordinador de Programas", "Terapeuta Deportivo o Masajista", "Gerente de Relaciones con los Miembros" }));
         cboRolE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboRolEActionPerformed(evt);
@@ -1213,15 +1213,15 @@ public class Admin extends javax.swing.JFrame {
             Administradores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Administradores1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(Administradores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Administradores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Administradores1Layout.createSequentialGroup()
                         .addGroup(Administradores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addGroup(Administradores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cboTurnoE, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboRolE, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cboRolE, 0, 0, Short.MAX_VALUE)
+                            .addComponent(cboTurnoE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Administradores1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
@@ -4473,7 +4473,6 @@ public class Admin extends javax.swing.JFrame {
         
         txtEdadA.setText("Edad");               txtEdadA.setForeground(blanquito);
     }
-    
     private void limpiarEmpleado(){
     
         txtNombreE.setText("Nombre(s)");

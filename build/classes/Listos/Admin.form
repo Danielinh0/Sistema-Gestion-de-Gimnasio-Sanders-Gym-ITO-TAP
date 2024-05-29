@@ -1101,9 +1101,9 @@
                                               <Component id="btnRegistro1" min="-2" pref="142" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                               <Component id="btnEditarA" min="-2" pref="140" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                               <Component id="btnEditarA1" min="-2" pref="260" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -1758,7 +1758,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel46" min="-2" pref="50" max="-2" attributes="0"/>
@@ -1766,8 +1766,8 @@
                                               </Group>
                                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="cboTurnoE" min="-2" pref="140" max="-2" attributes="0"/>
-                                                  <Component id="cboRolE" min="-2" pref="140" max="-2" attributes="0"/>
+                                                  <Component id="cboRolE" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="cboTurnoE" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Component id="jLabel45" min="-2" pref="240" max="-2" attributes="0"/>
@@ -1998,10 +1998,19 @@
                             <Component class="javax.swing.JComboBox" name="cboRolE">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="3">
-                                    <StringItem index="0" value="Instructor"/>
-                                    <StringItem index="1" value="Recepcionista"/>
-                                    <StringItem index="2" value="Conserje"/>
+                                  <StringArray count="12">
+                                    <StringItem index="0" value="Recepcionista"/>
+                                    <StringItem index="1" value="Entrenador Personal"/>
+                                    <StringItem index="2" value="Instructor de Clases Grupales"/>
+                                    <StringItem index="3" value="Entrenador de Fuerza y Acondicionamiento"/>
+                                    <StringItem index="4" value="Nutricionista o Dietista"/>
+                                    <StringItem index="5" value="Personal de Mantenimiento y Limpieza (Conserje)"/>
+                                    <StringItem index="6" value="Gerente de Ventas y Marketing"/>
+                                    <StringItem index="7" value="Especialista en Atenci&#xf3;n al Cliente"/>
+                                    <StringItem index="8" value="Personal de Seguridad"/>
+                                    <StringItem index="9" value="Coordinador de Programas"/>
+                                    <StringItem index="10" value="Terapeuta Deportivo o Masajista"/>
+                                    <StringItem index="11" value="Gerente de Relaciones con los Miembros"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
