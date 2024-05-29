@@ -1,5 +1,32 @@
 # Sistema Gestion De Gimnasio Sanders GYM
-## Descripción del programa
+¡Bienvenido al Sistema de Gestión de un Gimnasio! Este software ha sido diseñado para ayudar a los gimnasios a gestionar eficientemente sus operaciones diarias. Con una interfaz fácil de usar y una amplia gama de funcionalidades, este sistema asegura que tanto el personal administrativo como los miembros del gimnasio tengan una experiencia fluida y eficiente.
+# Características y Funcionalidades Principales
+
+## *Gestión de Miembros*
+- Registro de Miembros: Permite registrar nuevos miembros con toda la información relevante, como nombre, apellido, edad, correo electrónico y tipo de membresía.
+- Actualización de Datos: Facilita la actualización de los datos de los miembros existentes.
+- Historial de Membresías: Mantiene un registro del historial de membresías y pagos de cada miembro.
+## *Gestión de Empleados*
+- Registro de Empleados: Permite añadir y gestionar los empleados del gimnasio, asignándoles roles específicos (administrador, entrenador, recepcionista, etc.).
+- Control de Acceso: Los empleados pueden iniciar sesión con sus credenciales y acceder a las funcionalidades según sus roles.
+## *Generación de Informes*
+- Informes PDF: Genera informes detallados en formato PDF sobre la información de los miembros, estado de las membresías y más.
+- Gráficos: Genera gráficos de pastel y de barras para visualizar la distribución de clientes por edad y tipo de membresía.
+## *Gestión de Suscripciones*
+- Planes de Membresía: Permite definir y gestionar diferentes planes de membresía (mensual, trimestral, anual, etc.).
+- Control de Pagos: Realiza un seguimiento de los pagos de los miembros y genera alertas para las renovaciones pendientes.
+## *Comunicación*
+- Notificaciones por Correo Electrónico: Envía correos electrónicos con archivos PDF adjuntos para notificar a los miembros sobre actualizaciones, vencimientos de membresías y promociones.
+- Confirmaciones de Registro: Envía confirmaciones automáticas por correo electrónico al registrar nuevos miembros o empleados.
+# Tecnologías Utilizadas
+- Java: El lenguaje principal utilizado para la implementación del sistema.
+- JDBC: Para la conexión y manipulación de la base de datos.
+- iText: Para la generación de archivos PDF.
+- JFreeChart: Para la creación de gráficos.
+- Swing: Para la interfaz gráfica de usuario (GUI).
+- MySQL: Como base de datos para almacenar toda la información del gimnasio.
+
+  
 ## Instalación 
 Para comenzar la instalación necesitas del repositorio el cual puedes descargarlo en este link.
 
