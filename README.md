@@ -26,18 +26,6 @@
 - Swing: Para la interfaz gráfica de usuario (GUI).
 - MySQL: Como base de datos para almacenar toda la información del gimnasio.
 
-  
-## Instalación 
-Para comenzar la instalación necesitas del repositorio el cual puedes descargarlo en este link.
-
-https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP.git 
-
-o bien directamente desde la opción “Code” y después Download ZIP.
-
-![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d60bb060-f598-4c6f-8034-10b4e4d4e8c7)
-
-
-
 
 ## Clases Utilizadas
 `Clase Conexión`
@@ -63,3 +51,31 @@ En esta clase tenemos todos los métodos ocupados para el funcionamiento correct
 | `generarGraficoPastel()` | Genera un gráfico de pastel con la distribución de clientes por edad. **Con los debidos métodos utilizados:** `obtenerConexion()`, `createStatement()` de `Connection`, `executeQuery(String sql)` de `Statement`, `setValue(...)` de `DefaultPieDataset`, `createPieChart(...)` de `ChartFactory`, `setLabelGenerator(...)` de `PiePlot`, `showMessageDialog(...)`. |
 | `generarGraficoBarras()` | Genera un gráfico de barras con el número de personas que tienen diferentes membresías. **Con los debidos métodos utilizados:** `obtenerConexion()`, `createStatement()` de `Connection`, `executeQuery(String sql)` de `Statement`, `addValue(...)` de `DefaultCategoryDataset`, `createBarChart(...)` de `ChartFactory`. |
 | `enviarCorreoConPDF(String correoDestino, String archivoPDF)` | Envía un correo electrónico con un archivo PDF adjunto. **Con los debidos métodos utilizados:** `getInstance(Properties props, Authenticator authenticator)` de `Session`, `setFrom(...)`, `setRecipients(...)`, `setSubject(...)`, `setContent(...)` de `Message`, Métodos de `MimeBodyPart` y `Multipart`, `send(Message msg)` de `Transport`. |
+
+## Instalación 
+Para comenzar la instalación necesitas del repositorio el cual puedes descargarlo en este link.
+
+https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP.git 
+
+o bien directamente desde la opción “Code” y después Download ZIP.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d60bb060-f598-4c6f-8034-10b4e4d4e8c7)
+
+Al igual que las librerias correspondientes las cuales puedes descargar en este link.
+
+https://drive.google.com/drive/folders/1UY92ffaZnVUB86nuV167org4QWpWMY0Y?usp=sharing.
+
+
+Una vez descargados el repositorio y sus debidas librerías tendríamos algo similar a esto:
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/7de8be15-fb2b-47b6-a5db-94f977ddbd9b)
+
+
+
+
+
+
+
+
+
+
