@@ -162,9 +162,9 @@ Para limpiarlo daremos Clic derecho sobre el proyecto, apareciendo así la opci�
 
 Hemos terminado de instalar la aplicación, ahora iremos a las pruebas de funcionamiento.
 
-### Funcionamiento 
+### Modelo Vista Controlador
 
-Para mostrar el funcionamiento tenemos los siguientes frames dentro del paquete *Listos*.
+Antes de mostrar el funcionamiento tenemos que hablar de los siguientes frames dentro del paquete *Listos*.
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/aab56315-cb2c-4188-80d2-33313b691d04)
 
@@ -243,13 +243,47 @@ public void GuardarDatosPersona(String Nombre, String A_Paterno, String A_Matern
 ### Vista
 Para la parte de `Vista` lo siguiente es fundamental.
 
-Nos presenta una forma gráfica y a detalle cada característica de algún objeto en este caso dicho de otra forma en un `cliente`.
+Se nos presenta una forma visualmente y a detalle de cada característica sobre algún objeto en este caso dicho de otra forma en un `cliente`.
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/25d7e2b0-614b-42ed-9a75-cf02652a1387)
 
 De la misma manera en un `Empleado` o `Administrador`, son mostrados de manera visual y a detalle en nuestro programa. Este mismo representa una interfaz de usuario y a su vez se encarga de mostrar los datos completos del modelo al usuario e interacciones del usuario.
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/67e21261-ce00-42a0-981c-4e7cbd4ccc64)
+
+### Controlador
+
+Para la parte del “Controlador” tenemos mucho sobre eso, desde los métodos más simples a métodos complejos.
+
+Plasmados en una serie de botones
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/8d910dcf-28e0-4075-aee5-0a1a8b1bb25c)
+
+Para también después plasmar toda la información en una serie de graficas visuales:
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/a44ff962-1fac-47e3-b323-0b6a0f4c2611)
+
+
+### Funcionamiento
+
+Entramos al funcionamiento del programa., para ello se mostrará con capturas parte por parte lo esencial de este mismo. E indicando en que apartados se ocupa
+
+Comenzamos con el hecho de que se tiene 3 frames muy importantes ya que sin ellos este programa no funcionaria.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/164ad50c-c701-49ec-b1a5-765c5edf2dfb)
+
+
+También se tiene en cuenta las clases creadas en otros paquetes, pero dentro del mismo proyecto.
+En nuestro caso tenemos una clase con la conexión de la base de datos y una clase con los métodos que se ocuparan en este programa.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/9a0c48a8-dbd4-4ea5-938a-2fc73c7acbc1)
+
+
+Comenzamos de lleno con el frame de login.
+Este frame es el inicio de todo lo que se verá más adelante, dentro de este se ocupa el método `ValidarUsuario` sobre el botón `login `
+
+
+
 
 
 
