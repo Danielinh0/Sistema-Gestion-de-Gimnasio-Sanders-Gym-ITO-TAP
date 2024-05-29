@@ -134,6 +134,44 @@ Buscaremos la ubicación de estas librerías anteriormente descargadas.
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/061d0cbe-9bfd-4db5-9ff7-343088261b40)
 
 
+Se deberá hacer eso en cada carpeta de cada librería.
+
+Librería JfreeChart y sus respectivos Jar, seleccionamos e importamos.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/7af829ca-861c-482e-975d-fc25239583f7)
+
+Librería Itext y sus respectivos Jar, seleccionamos e importamos.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d415fcd9-7237-44fa-8342-037887e6cbd3)
+
+Librerías JavaxMail Y sus respectivos Jar, seleccionamos e importamos.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/1aef93d9-946f-46bb-b8f1-caf02c1e69c5)
+
+Librería MySqlConnection y su respectivo jar, seleccionamos e importamos.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/4504d071-a7c7-419c-9e88-834e2f7bdb80)
+
+Finalmente, los errores desaparecieron, pero ahora vamos a limpiar este mismo.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/ec337f60-72e9-4a5a-b5c9-dbc2131bf725)
+
+Para limpiarlo daremos Clic derecho sobre el proyecto, apareciendo así la opción de clean and build, el cual daremos clic.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d22ba9b9-4155-4fdd-9704-4ceabb59f4b6)
+
+Hemos terminado de instalar la aplicación, ahora iremos a las pruebas de funcionamiento.
+
+### Funcionamiento 
+
+
+
+
+
+
+
+
+
 
 
 
