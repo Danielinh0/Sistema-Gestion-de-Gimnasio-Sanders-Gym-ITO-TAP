@@ -402,14 +402,14 @@ public class Empleado extends javax.swing.JFrame {
         lblTextoMorado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTextoMorado.setText("¡Bienvenido de Vuelta!");
         lblTextoMorado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(lblTextoMorado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1520, -1));
+        jPanel2.add(lblTextoMorado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 42, 1520, 40));
 
         jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel58.setForeground(new java.awt.Color(255, 255, 255));
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel58.setText("SANDERS GYM");
         jLabel58.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1520, 40));
+        jPanel2.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1520, 40));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 1550, 90));
 
