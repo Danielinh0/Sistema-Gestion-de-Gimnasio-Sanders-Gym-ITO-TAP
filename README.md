@@ -81,6 +81,22 @@ Recordando que nuestro proyecto principal es aquel llamado Sistema-Gestion-de-Gi
 
 ### Dentro De Netbeans
 
+Una vez en netbeans nos dirigiremos al apartado de abrir proyecto
+
+![image](https://github.com/Danielinh0/ITO_U2_PDFBoton/assets/168349271/1de2729e-3155-4370-a6fd-97dc05fbb197)
+
+En el buscaremos la carpeta descomprimida del programa de gestión y según sea el lugar que se haya hecho. Lo abrimos y proseguimos a la parte de la instalación de las librerías de este mismo.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/465c32c9-c31f-46a8-a47b-5565755a999b)
+
+
+El proyecto nos muestra que hay algunos errores dentro de este.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/8ce13475-f57c-40f8-9085-29aed27e404b)
+
+
+
+
 
 
 
