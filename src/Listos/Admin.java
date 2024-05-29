@@ -3155,6 +3155,7 @@ public class Admin extends javax.swing.JFrame {
         }
 
         mostrarDatosEmpleados(); 
+        limpiarEmpleado();
         
         
         
@@ -3290,7 +3291,8 @@ public class Admin extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
-        mostrarDatosAdmin();  
+        mostrarDatosAdmin(); 
+        limpiarAdmin();
         
     }//GEN-LAST:event_btnEditarAMouseClicked
 
