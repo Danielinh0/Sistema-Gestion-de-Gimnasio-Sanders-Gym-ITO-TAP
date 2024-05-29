@@ -2308,9 +2308,20 @@ public class Admin extends javax.swing.JFrame {
 
     private void PLusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PLusuarioMouseClicked
         // TODO add your handling code here:
-        this.dispose();
-        login log = new login();
-        log.setVisible(true);
+        int response = JOptionPane.showConfirmDialog(Admin.this,
+                "¿Seguro que deseas cambiar de usuario?",
+                "Confirmar Cierre de Sesion",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
+
+        // Si el usuario selecciona "Sí", cerrar el programa
+        if (response == JOptionPane.YES_OPTION) {
+            this.dispose();
+            login log = new login();
+            log.setVisible(true);
+        }
+
     }//GEN-LAST:event_PLusuarioMouseClicked
 
     private void PLusuarioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PLusuarioMouseMoved
