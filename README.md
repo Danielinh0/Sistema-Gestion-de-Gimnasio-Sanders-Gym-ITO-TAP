@@ -1,3 +1,13 @@
+# Sistema Gestion De Gimnasio Sanders GYM
+## Descripción del programa
+## Instalación 
+Para comenzar la instalación necesitas del repositorio el cual puedes descargarlo en este link.
+
+https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP.git 
+
+o bien directamente desde la opción “Code” y después Download ZIP.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d60bb060-f598-4c6f-8034-10b4e4d4e8c7)
 
 
 
