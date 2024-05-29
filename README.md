@@ -52,7 +52,10 @@ En esta clase tenemos todos los métodos ocupados para el funcionamiento correct
 | `generarGraficoBarras()` | Genera un gráfico de barras con el número de personas que tienen diferentes membresías. **Con los debidos métodos utilizados:** `obtenerConexion()`, `createStatement()` de `Connection`, `executeQuery(String sql)` de `Statement`, `addValue(...)` de `DefaultCategoryDataset`, `createBarChart(...)` de `ChartFactory`. |
 | `enviarCorreoConPDF(String correoDestino, String archivoPDF)` | Envía un correo electrónico con un archivo PDF adjunto. **Con los debidos métodos utilizados:** `getInstance(Properties props, Authenticator authenticator)` de `Session`, `setFrom(...)`, `setRecipients(...)`, `setSubject(...)`, `setContent(...)` de `Message`, Métodos de `MimeBodyPart` y `Multipart`, `send(Message msg)` de `Transport`. |
 
-## Instalación 
+## Instalación y Uso
+
+### Descarga del repositorio y sus librerias
+
 Para comenzar la instalación necesitas del repositorio el cual puedes descargarlo en este link.
 
 https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP.git 
@@ -70,6 +73,13 @@ Una vez descargados el repositorio y sus debidas librerías tendríamos algo sim
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/7de8be15-fb2b-47b6-a5db-94f977ddbd9b)
 
+Descomprimiremos todos los archivos para posteriormente pasar a la resolución de problemas en Netbeans.
+
+Recordando que nuestro proyecto principal es aquel llamado Sistema-Gestion-de-Gimanasio-Sanders-GYM
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/936a942a-4a75-4dea-bc05-38776cda7516)
+
+### Dentro De Netbeans
 
 
 
