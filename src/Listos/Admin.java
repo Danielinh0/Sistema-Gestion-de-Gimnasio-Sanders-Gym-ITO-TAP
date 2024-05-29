@@ -94,18 +94,21 @@ public class Admin extends javax.swing.JFrame {
         AltaS = new javax.swing.JMenuItem();
         PanelGeneral = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
-        PLempleados = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         PLinicio = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        PLempleados = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         PLclientes = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         PLmembresias = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        PLSucursales = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         PLusuario = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -114,9 +117,6 @@ public class Admin extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        PLSucursales = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblTextoMorado = new javax.swing.JLabel();
@@ -300,50 +300,6 @@ public class Admin extends javax.swing.JFrame {
         sidePanel.setBackground(new java.awt.Color(54, 33, 89));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PLempleados.setBackground(new java.awt.Color(64, 43, 100));
-        PLempleados.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                PLempleadosMouseMoved(evt);
-            }
-        });
-        PLempleados.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PLempleadosMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                PLempleadosMouseExited(evt);
-            }
-        });
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pruebahogar/imagenes/empleado.png"))); // NOI18N
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel5.setText("Empleados");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout PLempleadosLayout = new javax.swing.GroupLayout(PLempleados);
-        PLempleados.setLayout(PLempleadosLayout);
-        PLempleadosLayout.setHorizontalGroup(
-            PLempleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PLempleadosLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        PLempleadosLayout.setVerticalGroup(
-            PLempleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PLempleadosLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(PLempleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        sidePanel.add(PLempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 310, 50));
-
         PLinicio.setBackground(new java.awt.Color(64, 43, 100));
         PLinicio.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -387,6 +343,50 @@ public class Admin extends javax.swing.JFrame {
         );
 
         sidePanel.add(PLinicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 310, 50));
+
+        PLempleados.setBackground(new java.awt.Color(64, 43, 100));
+        PLempleados.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                PLempleadosMouseMoved(evt);
+            }
+        });
+        PLempleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PLempleadosMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PLempleadosMouseExited(evt);
+            }
+        });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pruebahogar/imagenes/empleado.png"))); // NOI18N
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setText("Empleados");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout PLempleadosLayout = new javax.swing.GroupLayout(PLempleados);
+        PLempleados.setLayout(PLempleadosLayout);
+        PLempleadosLayout.setHorizontalGroup(
+            PLempleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PLempleadosLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        PLempleadosLayout.setVerticalGroup(
+            PLempleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PLempleadosLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(PLempleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        sidePanel.add(PLempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 310, 50));
 
         PLclientes.setBackground(new java.awt.Color(64, 43, 100));
         PLclientes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -475,6 +475,50 @@ public class Admin extends javax.swing.JFrame {
         );
 
         sidePanel.add(PLmembresias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 310, 50));
+
+        PLSucursales.setBackground(new java.awt.Color(64, 43, 100));
+        PLSucursales.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                PLSucursalesMouseMoved(evt);
+            }
+        });
+        PLSucursales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PLSucursalesMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PLSucursalesMouseExited(evt);
+            }
+        });
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pruebahogar/imagenes/gimnasio (2).png"))); // NOI18N
+
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel32.setText("Sucursales");
+        jLabel32.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout PLSucursalesLayout = new javax.swing.GroupLayout(PLSucursales);
+        PLSucursales.setLayout(PLSucursalesLayout);
+        PLSucursalesLayout.setHorizontalGroup(
+            PLSucursalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PLSucursalesLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        PLSucursalesLayout.setVerticalGroup(
+            PLSucursalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PLSucursalesLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(PLSucursalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        sidePanel.add(PLSucursales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 310, 50));
 
         PLusuario.setBackground(new java.awt.Color(64, 43, 100));
         PLusuario.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -575,50 +619,6 @@ public class Admin extends javax.swing.JFrame {
         jLabel28.setText("_____________________");
         jLabel28.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         sidePanel.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 210, 40));
-
-        PLSucursales.setBackground(new java.awt.Color(64, 43, 100));
-        PLSucursales.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                PLSucursalesMouseMoved(evt);
-            }
-        });
-        PLSucursales.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PLSucursalesMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                PLSucursalesMouseExited(evt);
-            }
-        });
-
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pruebahogar/imagenes/gimnasio (2).png"))); // NOI18N
-
-        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel32.setText("Sucursales");
-        jLabel32.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout PLSucursalesLayout = new javax.swing.GroupLayout(PLSucursales);
-        PLSucursales.setLayout(PLSucursalesLayout);
-        PLSucursalesLayout.setHorizontalGroup(
-            PLSucursalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PLSucursalesLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        PLSucursalesLayout.setVerticalGroup(
-            PLSucursalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PLSucursalesLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(PLSucursalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        sidePanel.add(PLSucursales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 310, 50));
 
         PanelGeneral.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 750));
 
@@ -2226,6 +2226,11 @@ public class Admin extends javax.swing.JFrame {
         clientesNuevosxMes();
         IngresosTotales_UltimoMes();
         promedio_edad();
+        LimpiarCampos();
+        LimpiarCamposMEM();
+        limpiarAdmin();
+        limpiarEmpleado();
+        limpiarS();
     }//GEN-LAST:event_PLinicioMouseClicked
 
     private void PLinicioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PLinicioMouseMoved
@@ -2242,6 +2247,11 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
         pnVentanas.setSelectedIndex(1);
         lblTextoMorado.setText("Control de Empleados");
+        LimpiarCampos();
+        LimpiarCamposMEM();
+        limpiarAdmin();
+        limpiarEmpleado();
+        limpiarS();
     }//GEN-LAST:event_PLempleadosMouseClicked
 
     private void PLempleadosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PLempleadosMouseMoved
@@ -2258,6 +2268,11 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
         pnVentanas.setSelectedIndex(2);
         lblTextoMorado.setText("Gestion de Clientes");
+        LimpiarCampos();
+        LimpiarCamposMEM();
+        limpiarAdmin();
+        limpiarEmpleado();
+        limpiarS();
     }//GEN-LAST:event_PLclientesMouseClicked
 
     private void PLclientesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PLclientesMouseMoved
@@ -2274,6 +2289,11 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
         pnVentanas.setSelectedIndex(3);
         lblTextoMorado.setText("Control de Membresias");
+        LimpiarCampos();
+        LimpiarCamposMEM();
+        limpiarAdmin();
+        limpiarEmpleado();
+        limpiarS();
     }//GEN-LAST:event_PLmembresiasMouseClicked
 
     private void PLmembresiasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PLmembresiasMouseMoved
@@ -2506,6 +2526,11 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
         pnVentanas.setSelectedIndex(4);
         lblTextoMorado.setText("Control de Sucursales");
+        LimpiarCampos();
+        LimpiarCamposMEM();
+        limpiarAdmin();
+        limpiarEmpleado();
+        limpiarS();
     }//GEN-LAST:event_PLSucursalesMouseClicked
 
     private void PLSucursalesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PLSucursalesMouseExited
@@ -3624,7 +3649,10 @@ public class Admin extends javax.swing.JFrame {
 
                         JOptionPane.showMessageDialog(this, "Membresía modificada/migrada exitosamente.");
                     } else {
-                        JOptionPane.showMessageDialog(this, "No se encontró la fecha de apertura para el nuevo nombre.");
+                        Metodos aux2 = new Metodos();
+                        aux2.Editar_SucursalesBD(nombreAntiguo, direccion_A, fechaAntiguaSql, nombre_Nuevo, direccion_N, fechaAntiguaSql);
+
+                        JOptionPane.showMessageDialog(this, "Membresía migrada exitosamente.");
                     }
                 }
             } catch (SQLException e) {
