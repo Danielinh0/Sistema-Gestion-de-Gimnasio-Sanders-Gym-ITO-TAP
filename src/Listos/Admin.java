@@ -4474,6 +4474,9 @@ public class Admin extends javax.swing.JFrame {
         txtSalarioA.setText("Salario");         txtSalarioA.setForeground(blanquito);
         
         txtEdadA.setText("Edad");               txtEdadA.setForeground(blanquito);
+        
+        txtContraA.setText("Contraseña");       txtContraA.setForeground(blanquito);
+        
     }
     private void limpiarEmpleado(){
     
@@ -4493,6 +4496,8 @@ public class Admin extends javax.swing.JFrame {
         txtSalarioE.setText("Salario");         txtSalarioE.setForeground(blanquito);
         
         txtEdadE.setText("Edad");               txtEdadE.setForeground(blanquito);
+        
+        txtContraA.setText("Contraseña");       txtContraA.setForeground(blanquito);
     
     }
     
