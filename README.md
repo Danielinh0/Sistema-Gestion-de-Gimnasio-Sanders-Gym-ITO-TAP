@@ -95,6 +95,29 @@ El proyecto nos muestra que hay algunos errores dentro de este.
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/8ce13475-f57c-40f8-9085-29aed27e404b)
 
 
+Para la solución de este mismo haremos lo siguiente:
+Clic derecho sobre el proyecto, nos desplegara opciones para nuestro proyecto, pero nos centraremos en dos: Resolve Project Problems y Properties.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/4e1b89a0-ed6c-4dc9-8a57-f97dce204d60)
+
+
+La primera opción nos mostrara los documentos o bien los jar que hacen falta, como se muestra a continuación.
+
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/bf6f12cd-8b49-454a-a5b1-716f33c7c640)
+
+Para ello tenemos que usar las librerías que anteriormente descargamos, por si no los has descargado aquí dejo el link de estas librerías: 
+
+https://drive.google.com/drive/folders/1UY92ffaZnVUB86nuV167org4QWpWMY0Y?usp=sharing 
+
+
+Para ello nos iremos a la segunda opción “Properties” 
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/4e1b89a0-ed6c-4dc9-8a57-f97dce204d60)
+
+Nos mostrara la siguiente ventana en la cual nos debemos dirigir al apartado de “libraries”, una vez dentro tendremos que eliminar manualmente uno por uno cada librería rota.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/63678d7a-6219-4865-838e-b6087f27822f)
 
 
 
