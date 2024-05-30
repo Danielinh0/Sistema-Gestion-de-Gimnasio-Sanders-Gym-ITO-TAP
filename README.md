@@ -185,6 +185,10 @@ Esta tabla proporciona una visión clara de cómo los métodos y los componentes
 Esta tabla proporciona una visión clara de cómo los métodos y los componentes de la interfaz de usuario están relacionados.
 
 
+## Adjunto tabla utlizada en MySQL para este proyecto
+
+**Link De La Base De Datos**
+https://drive.google.com/drive/folders/1zjAfUqpT_eQNNIVgnnhofl81WGQQpRUw?usp=sharing 
 
 
 
