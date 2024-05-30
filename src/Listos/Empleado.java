@@ -810,6 +810,7 @@ public class Empleado extends javax.swing.JFrame {
         });
         TablaMembresias.setGridColor(new java.awt.Color(255, 255, 255));
         TablaMembresias.setSelectionBackground(new java.awt.Color(122, 72, 221));
+        TablaMembresias.setSelectionForeground(new java.awt.Color(204, 204, 204));
         TablaMembresias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TablaMembresiasMouseClicked(evt);
@@ -817,10 +818,10 @@ public class Empleado extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(TablaMembresias);
 
-        Membresias.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 1490, 420));
+        Membresias.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 1490, 360));
 
         jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pruebahogar/imagenes/lupa.png"))); // NOI18N
-        Membresias.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, -1, -1));
+        Membresias.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
 
         txtBuscarM.setSelectedTextColor(new java.awt.Color(204, 204, 204));
         txtBuscarM.setSelectionColor(new java.awt.Color(122, 72, 221));
@@ -829,13 +830,13 @@ public class Empleado extends javax.swing.JFrame {
                 txtBuscarMKeyReleased(evt);
             }
         });
-        Membresias.add(txtBuscarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 200, -1));
+        Membresias.add(txtBuscarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 200, -1));
 
         jLabel56.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(54, 33, 89));
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel56.setText("Buscar por Nombre");
-        Membresias.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 75, 200, 30));
+        Membresias.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 200, 30));
 
         pnVentanas.addTab("tab4", Membresias);
 
