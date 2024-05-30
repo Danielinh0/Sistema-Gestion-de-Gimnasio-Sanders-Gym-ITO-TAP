@@ -168,19 +168,19 @@ Esta tabla proporciona una visión clara de cómo los métodos y los componentes
 
 | Elemento | Descripción |
 | --- | --- |
-| (`btnRegistroM`)** | Llama al método `btnRegistroMMouseClicked` para registrar una nueva membresía. |
-| (`btnEditarM`)** | Llama al método `btnEditarMMouseClicked` para editar la membresía seleccionada. |
-| (`btnEliminar`)** | Llama al método `btnEliminarMouseClicked` para eliminar la membresía seleccionada. |
-| **Tabla `TablaMembresias`** | Al hacer clic en una fila, se llama al método `TablaMembresiasMouseClicked` para rellenar los campos de texto con los datos de la membresía seleccionada. |
-| (`btnRegistroG`)** | Llama al método `btnRegistroGMouseClicked` para registrar una nueva sucursal. |
-| (`btnEditarG`)** | Llama al método `btnEditarGMouseClicked` para editar la sucursal seleccionada. |
-| (`btnEliminarG1`)** | Llama al método `btnEliminarG1MouseClicked` para eliminar la sucursal seleccionada. |
-| (`AltaS`)** | Llama al método `AltaSActionPerformed` para actualizar la fecha de alta de la sucursal seleccionada. |
-| **Tabla `TablaSucursales`** | Se utiliza para seleccionar la sucursal para edición o eliminación. |
-| (`btnEnviar_EM`)** | Llama al método `btnEnviar_EMMouseClicked` para generar un PDF del empleado seleccionado. |
-| (`btnEditar1`)** | Llama al método `btnEditar1MouseClicked` para generar un PDF del cliente seleccionado. |
-| (`btnEditarA1`)** | Llama al método `btnEditarA1MouseClicked` para generar un PDF del administrador seleccionado. |
-| **Tabla `TablaClientes`** | Se utiliza para mostrar los datos de los clientes y aplica un filtro de búsqueda si se proporciona texto en `txtBuscar`. |
+| `btnRegistroM` | Llama al método `btnRegistroMMouseClicked` para registrar una nueva membresía. |
+| `btnEditarM` | Llama al método `btnEditarMMouseClicked` para editar la membresía seleccionada. |
+| `btnEliminar` | Llama al método `btnEliminarMouseClicked` para eliminar la membresía seleccionada. |
+| Tabla `TablaMembresias` | Al hacer clic en una fila, se llama al método `TablaMembresiasMouseClicked` para rellenar los campos de texto con los datos de la membresía seleccionada. |
+| `btnRegistroG` | Llama al método `btnRegistroGMouseClicked` para registrar una nueva sucursal. |
+| `btnEditarG` | Llama al método `btnEditarGMouseClicked` para editar la sucursal seleccionada. |
+| `btnEliminarG1` | Llama al método `btnEliminarG1MouseClicked` para eliminar la sucursal seleccionada. |
+| `AltaS` | Llama al método `AltaSActionPerformed` para actualizar la fecha de alta de la sucursal seleccionada. |
+| Tabla `TablaSucursales` | Se utiliza para seleccionar la sucursal para edición o eliminación. |
+| `btnEnviar_EM` | Llama al método `btnEnviar_EMMouseClicked` para generar un PDF del empleado seleccionado. |
+| `btnEditar1` | Llama al método `btnEditar1MouseClicked` para generar un PDF del cliente seleccionado. |
+| `btnEditarA1` | Llama al método `btnEditarA1MouseClicked` para generar un PDF del administrador seleccionado. |
+| Tabla `TablaClientes` | Se utiliza para mostrar los datos de los clientes y aplica un filtro de búsqueda si se proporciona texto en `txtBuscar`. |
 
 Esta tabla proporciona una visión clara de cómo los métodos y los componentes de la interfaz de usuario están relacionados.
 
