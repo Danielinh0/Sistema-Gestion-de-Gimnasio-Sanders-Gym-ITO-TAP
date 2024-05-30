@@ -391,25 +391,19 @@ Los paneles que nos hacen volver al inicio de sesión y/o salir del programa res
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/597bb666-6526-4e68-9351-11d565e42d3c)
 
+# Autores
+
+Daniel Eduardo Garcia Salvador    
+@danielinh_0
+
+Luis Gael Fernadez Crisanto       
+@gaelf_04
 
 
+# Agradecimientos
+- A mi gato por acompañarme durante toda esta travesia.
+- Y a mis ganas de seguir adelante
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
