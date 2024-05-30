@@ -30,7 +30,7 @@
 
 
 ## Clases Utilizadas
-`Clase Conexión`
+### Clase Conexión
 La clase Conexión tiene como objetivo establecer una conexión con una base de datos MySQL y sus principales funciones y características:
 
 | Método                     | Descripción                                                                                                     |
@@ -38,7 +38,7 @@ La clase Conexión tiene como objetivo establecer una conexión con una base de 
 | `conectar()`               | Intenta establecer una conexión con la base de datos utilizando los valores de `URL`, `USER` y `CLAVE`. Si la conexión es exitosa, se asigna al atributo `con`. Si ocurre un error, se imprime un mensaje con los detalles del error. Finalmente, el método devuelve el objeto `Connection`. |
 
 
-`Clase métodos`
+### Clase métodos
 En esta clase tenemos todos los métodos ocupados para el funcionamiento correcto del programa, a continuación se hará el listado de los métodos más importantes.
 
 
