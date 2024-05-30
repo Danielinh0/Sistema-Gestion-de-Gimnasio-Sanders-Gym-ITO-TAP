@@ -1,5 +1,6 @@
 # Sistema Gestion De Gimnasio Sanders GYM
 ¡Bienvenido al Sistema de Gestión de un Gimnasio! Este software ha sido diseñado para ayudar a los gimnasios a gestionar eficientemente sus operaciones diarias. Con una interfaz fácil de usar y una amplia gama de funcionalidades, este sistema asegura que tanto el personal administrativo como los miembros del gimnasio tengan una experiencia fluida y eficiente.
+
 ## Características y Funcionalidades Principales
 
 ### *Gestión de Miembros*
