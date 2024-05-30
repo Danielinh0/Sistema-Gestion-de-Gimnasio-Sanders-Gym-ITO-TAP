@@ -358,9 +358,44 @@ Si se aceptar abrir el archivo se nos mostrara el siguiente PDF.
 
 Este procedimiento es básicamente lo mismo para `empleado` y `cliente`.
 
-Agregamos un empleado Nuevo y su PDF es el siguiente. Cada PDF, según sea el tipo de usuario tendrá un asunto diferente.
+Agregamos un empleado Nuevo y su PDF es el siguiente.  Cabe recalcar que cada PDF según sea el tipo de usuario tendrá un asunto diferente.
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/4e844463-d6f3-4bc1-ad4e-1e7015df2090)
+
+Para la lógica dentro de un empleado que registra Únicamente clientes es la misma que un `Administrador` que registra clientes.
+
+Para este caso, al ser un cliente tenemos un método `EnviarPDF`
+Lo que hace este es enviar el PDF al correo que se nos proporcionó durante el registro.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d89fd5a3-0d8c-4baf-806b-f775e927f0d2)
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/75c5980d-103d-4fcf-be46-9846e9559f3e)
+
+
+Las membresías también son únicas para el `Administrador`, ya que ellos pueden ponerle el nombre y su debido precio según sus necesidades al igual que una descripción llamativa para los clientes que la requieran.
+Se nos presentara en la tabla la membresia la cual hayamos registrado, nos contara las personas que la hayan contratado las membresias que se tienen a lo largo de su empresa, sacando de esta manera también los gráficos correspondientes.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/7580d839-8ed3-4c74-a0a9-c76f71570994)
+
+Cabe recalcar que tenemos una opción muy útil, la cual es buscar tanto clientes, empleados, membresías y administradores, al igual que sucursales dentro de la tabla que se tiene.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/594f3dc9-6be8-4e78-8b0f-fc84bd304d0d)
+
+Para el siguiente Panel, tenemos las sucursales que al igual que las membresías solo los administradores son capaces de modificar, agregar o eliminar.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/44ed547c-f740-44ee-85d3-2555b495f2af)
+
+
+Finalmente, y no menos importante tenemos a los botones de:
+Los paneles que nos hacen volver al inicio de sesión y/o salir del programa respectivamente
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/597bb666-6526-4e68-9351-11d565e42d3c)
+
+
+
+  
+
+
 
 
 
