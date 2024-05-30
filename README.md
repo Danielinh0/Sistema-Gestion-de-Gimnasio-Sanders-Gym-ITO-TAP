@@ -64,6 +64,19 @@ En esta clase tenemos todos los métodos ocupados para el funcionamiento correct
 | `setGimnasio(String n, int id, Date fecha)` | Busca un gimnasio por nombre en la tabla `gimnasio` y, si lo encuentra, inserta un nuevo gimnasio con los datos obtenidos y el `id` proporcionado en la tabla `gimnasio`. Utiliza la conexión de la clase `Conexion` y muestra un mensaje de error si la inserción falla. |
 | `obtenerUltimoIdMembresia()` | Obtiene el último `id_membresia` insertado en la tabla `membresia`. Utiliza la conexión de la clase `Conexion` y muestra un mensaje de error si la consulta falla. |
 | `ActualizarCliente(int id_cliente, String Nombre, String A_Paterno, String A_Materno, String CURP, String Direccion, String Telefono, int Edad, String correo)` | Actualiza los datos del cliente en las tablas `Persona` y `Cliente` con los datos proporcionados. Utiliza la conexión de la clase `Conexion` y muestra un mensaje de error si la actualización falla. |
+| `ActualizarMembresia(String NombreNuevoMembresia, int id_cliente, String NombreNuevoSucursal)` | Este método actualiza la membresía y sucursal del cliente. Se utiliza en el evento del botón Editar del CRUD para clientes. Actualiza los datos de la membresía y sucursal en base a consultas SQL. |
+| `ActualizarFecha(int id_persona), public void ActualizarFechaEmpleados(int id_persona)` | Actualiza las fechas de inscripción y baja de un cliente o empleado. Se utiliza en el evento action performed del JmenuItem del PopUpClientes. Si la fecha de baja no es nula, se actualiza a nula y la fecha de inscripción a la fecha actual; en caso contrario, la fecha de baja se actualiza a la fecha actual. |
+| `Connection obtenerConexion()` | Crea y obtiene una conexión a una base de datos. |
+| `setGimnasioEmpleado(String n, int id, Date fecha)` | Coloca a un empleado en una sucursal al momento de registrarlo en el CRUD de empleados. Selecciona datos de la sucursal (nombre, dirección, fecha de apertura) y los inserta en la tabla de gimnasio junto con el ID del empleado. |
+| `ActualizarEmpleado(int id_empleado, String Nombre, String A_Paterno, String A_Materno, String CURP, String Direccion, String Telefono, int Edad, int Salario, String Horario)` | Actualiza los datos personales y de trabajo de un empleado. Realiza un UPDATE en base al ID del empleado y los demás parámetros. |
+| `cambiarContraseniaAdmin(int id_empleado, String contra)` | Cambia la contraseña del administrador en base a su ID. |
+| `ActualizarSucursal(int id_empleado, String Nombre_Sucursal)` | Cambia la sucursal asociada a un empleado, actualizando el registro en la tabla Gimnasio con los nuevos datos. |
+| `cambiarContraseniaEmpleado(int id_empleado, String contra, String rol)` | Cambia la contraseña y el rol de un empleado en base al ID del asalariado seleccionado. |
+| ` Editar_MembresiasBD(String nombreAntiguo, String descripcionAntigua, int precioAntiguo, String nombre, int precio, String descripcion)` | Edita los registros de las membresías en la base de datos. Aplica "SET SQL_SAFE_UPDATES = 0" y "SET SQL_SAFE_UPDATES = 1" para setear los datos nuevos donde están los registros de los datos viejos. |
+| `eliminarMembresias(String nombreMembresia)` | Elimina todos los registros de las membresías y sus clientes asociados. Borra en orden todos los registros de la base de datos: Gimnasio – Membresía – Cliente – Persona. |
+| `public void Editar_SucursalesBD(String nombreAntiguo, String direccion_A, java.sql.Date fecha_A, String nombre_N, String direccion_N, java.sql.Date Fecha_N)` | Modifica los registros de las sucursales en la base de datos ocupando "SET SQL_SAFE_UPDATES = 0" y "SET SQL_SAFE_UPDATES = 1". Setea los datos nuevos donde haya registros de los datos viejos. |
+| `ActualizarFechaSucursal(String nombreS)` | Actualiza las fechas de apertura y cierre de una sucursal en base al nombre. Si la fecha de cierre no es nula, se actualiza a nula y la fecha de apertura a la fecha actual; en caso contrario, la fecha de baja se actualiza a la fecha actual. |
+| `public void eliminarSucursales(String nombreS)` | Elimina todos los registros asociados a una sucursal, incluyendo membresías, clientes y empleados. Sigue el orden: Gimnasio – Membresía – Cliente – Persona y Gimnasio – Asalariado | Admin – Empleado – Persona. |
 
 ### Jframe Empleado
 
@@ -75,51 +88,44 @@ Aqui se muestra tabla detallada que incluye la descripción de los métodos prop
 | `PLinicio`                   | Cambiar a la vista de inicio y actualizar estadísticas       | `pnVentanas.setSelectedIndex(0); lblTextoMorado.setText("Inicio"); Graficas(); clientesNuevosxMes(); IngresosTotales_UltimoMes(); promedio_edad();` |
 | `PLusuario`                  | Cerrar la ventana actual y abrir la ventana de login          | `this.dispose(); login log = new login(); log.setVisible(true);`                                       |
 | `PLsalir`                    | Confirmar y cerrar el programa                                | `int response = JOptionPane.showConfirmDialog(Empleado.this, "¿Seguro que deseas cerrar el programa?", "Confirmar Cierre", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE); if (response == JOptionPane.YES_OPTION) { this.dispose(); }` |
-| `TablaClientes`              | Seleccionar cliente y mostrar sus datos en los campos         | `fila = TablaClientes.getSelectedRow(); int id = Integer.parseInt((String) TablaClientes.getValueAt(fila, 0)); ...` (consulta y muestra datos en campos) |
-| `btnEditar`                  | Validar y actualizar datos del cliente seleccionado           | `String Nombre = txtNombre.getText().trim(); ...` (validaciones y actualización de datos)               |
-| `btnRegistro`                | Registrar un nuevo cliente con validaciones y asociaciones    | `String Nombre = txtNombre.getText().trim(); ...` (validaciones y registro de datos)                    |
+| `TablaClientes`              | Seleccionar cliente y mostrar sus datos en los campos         | `fila = TablaClientes.getSelectedRow(); int id = Integer.parseInt((String) TablaClientes.getValueAt(fila, 0)); ` |
+| `btnEditar`                  | Validar y actualizar datos del cliente seleccionado           | `String Nombre = txtNombre.getText().trim(); `             |
+| `btnRegistro`                | Registrar un nuevo cliente con validaciones y asociaciones    | `String Nombre = txtNombre.getText().trim(); `                 |
 | `btnEditar1`                 | Crear PDF con los datos del cliente seleccionado              | `Clases.Metodos objetoRegistro = new Clases.Metodos(); fila = TablaClientes.getSelectedRow(); int id = Integer.parseInt((String) TablaClientes.getValueAt(fila, 0)); ...` (creación de PDF) |
 
 ### Descripción de las funciones:
 
-1. **PLinicioMouseClicked**
-   - Cambia la vista a la pestaña de inicio.
-   - Actualiza el texto de `lblTextoMorado` a "Inicio".
-   - Llama a varias funciones para actualizar las estadísticas en la vista.
-
-2. **PLusuarioMouseClicked**
-   - Cierra la ventana actual.
-   - Crea y muestra una nueva instancia de la ventana de login.
-
-3. **PLsalirMouseClicked**
-   - Muestra un cuadro de diálogo para confirmar la salida del programa.
-   - Si el usuario confirma, cierra el programa.
-
-4. **TablaClientesMouseClicked**
-   - Obtiene la fila seleccionada en la tabla `TablaClientes`.
-   - Realiza una consulta a la base de datos para obtener más detalles del cliente seleccionado.
-   - Muestra los datos obtenidos en varios campos de texto en la interfaz.
-
-5. **btnEditarMouseClicked**
-   - Obtiene y valida los datos de los campos de texto.
-   - Actualiza los datos del cliente en la base de datos.
-   - Muestra un mensaje de éxito o error según el resultado de la operación.
-   - Crea un PDF con los datos actualizados del cliente.
-
-6. **btnRegistroMouseClicked**
-   - Obtiene y valida los datos de los campos de texto.
-   - Registra un nuevo cliente en la base de datos.
-   - Asocia la membresía y sucursal al nuevo cliente.
-   - Muestra un mensaje de éxito o error según el resultado de la operación.
-   - Crea un PDF con los datos del nuevo cliente.
-
-7. **btnEditar1MouseClicked**
-   - Obtiene el ID del cliente seleccionado en la tabla.
-   - Crea un PDF con los datos del cliente.
+| Método | Descripción |
+| --- | --- |
+| **PLinicioMouseClicked** | - Cambia la vista a la pestaña de inicio. <br> - Actualiza el texto de `lblTextoMorado` a "Inicio". <br> - Llama a varias funciones para actualizar las estadísticas en la vista. |
+| **PLusuarioMouseClicked** | - Cierra la ventana actual. <br> - Crea y muestra una nueva instancia de la ventana de login. |
+| **PLsalirMouseClicked** | - Muestra un cuadro de diálogo para confirmar la salida del programa. <br> - Si el usuario confirma, cierra el programa. |
+| **TablaClientesMouseClicked** | - Obtiene la fila seleccionada en la tabla `TablaClientes`. <br> - Realiza una consulta a la base de datos para obtener más detalles del cliente seleccionado. <br> - Muestra los datos obtenidos en varios campos de texto en la interfaz. |
+| **btnEditarMouseClicked** | - Obtiene y valida los datos de los campos de texto. <br> - Actualiza los datos del cliente en la base de datos. <br> - Muestra un mensaje de éxito o error según el resultado de la operación. <br> - Crea un PDF con los datos actualizados del cliente. |
+| **btnRegistroMouseClicked** | - Obtiene y valida los datos de los campos de texto. <br> - Registra un nuevo cliente en la base de datos. <br> - Asocia la membresía y sucursal al nuevo cliente. <br> - Muestra un mensaje de éxito o error según el resultado de la operación. <br> - Crea un PDF con los datos del nuevo cliente. |
+| **btnEditar1MouseClicked** | - Obtiene el ID del cliente seleccionado en la tabla. <br> - Crea un PDF con los datos del cliente. |
 
 Estas funciones están diseñadas para manejar la interacción del usuario con la interfaz de usuario (UI), asegurando que los datos se obtengan, validen, muestren y actualicen correctamente en la base de datos y la interfaz gráfica.
 
 
+### Más metodos de JframeEmpleado
+
+| Elemento | Descripción |
+| --- | --- |
+| **Botón "Mostrar Todas las Membresías"** | Llama al método `mostrarTodasM()` para llenar la tabla `TablaMembresias` con todas las membresías disponibles. |
+| **Campo de Texto `txtBuscarM`** | Permite al usuario filtrar las membresías por nombre antes de llamar al método `mostrarTodasM()`. |
+| **ComboBox `cboMembresias`** | Se llena con los nombres de las membresías cuando se llama a `seleccionarMembresias()`. |
+| **Botón "Generar Gráficas"** | Llama al método `Graficas()` para generar y mostrar gráficos de pastel y barras en `jPanel3` y `jPanel6`. |
+| **Etiqueta `lblCLN`** | Muestra el número de clientes nuevos del mes actual. Se actualiza con el método `clientesNuevosxMes()`. |
+| **Botón "Actualizar Clientes Nuevos"** | Llama al método `clientesNuevosxMes()` para actualizar la información mostrada en `lblCLN`. |
+| **Etiqueta `lblIngresos`** | Muestra los ingresos totales por membresías del último mes. Se actualiza con el método `IngresosTotales_UltimoMes()`. |
+| **Botón "Actualizar Ingresos"** | Llama al método `IngresosTotales_UltimoMes()` para actualizar la información mostrada en `lblIngresos`. |
+| **Etiqueta `lblPromedio`** | Muestra la edad promedio de los clientes activos. Se actualiza con el método `promedio_edad()`. |
+| **Botón "Actualizar Promedio Edad"** | Llama al método `promedio_edad()` para actualizar la información mostrada en `lblPromedio`. |
+| **ComboBox `cboSucursales`** | Se llena con los nombres de las sucursales activas (no cerradas) cuando se llama a `seleccionarSucursales()`. |
+
+
+### Detalles de la Interfaz:
 
 | **Método** | **Descripción** | **Botón/Componente Asociado** |
 |------------|-----------------|-------------------------------|
@@ -131,20 +137,6 @@ Estas funciones están diseñadas para manejar la interacción del usuario con l
 | `promedio_edad()` | Calcula y muestra la edad promedio de los clientes activos en una etiqueta (`lblPromedio`). | **Etiqueta**: `lblPromedio` <br> **Botón**: "Actualizar Promedio Edad" |
 | `seleccionarSucursales()` | Llena un `JComboBox` con los nombres de todas las sucursales que no han sido cerradas. | **ComboBox**: `cboSucursales` |
 
-
-### Detalles de la Interfaz:
-
-- **"Mostrar Todas las Membresías"**: Cuando se presiona, llama al método `mostrarTodasM()` para llenar la tabla `TablaMembresias` con todas las membresías disponibles.
-- **Campo de Texto `txtBuscarM`**: Permite al usuario filtrar las membresías por nombre antes de llamar al método `mostrarTodasM()`.
-- **ComboBox `cboMembresias`**: Se llena con los nombres de las membresías cuando se llama a `seleccionarMembresias()`.
-- **Botón "Generar Gráficas"**: Llama al método `Graficas()` para generar y mostrar gráficos de pastel y barras en `jPanel3` y `jPanel6`.
-- **Etiqueta `lblCLN`**: Muestra el número de clientes nuevos del mes actual. Se actualiza con el método `clientesNuevosxMes()`.
-- **Botón "Actualizar Clientes Nuevos"**: Llama al método `clientesNuevosxMes()` para actualizar la información mostrada en `lblCLN`.
-- **Etiqueta `lblIngresos`**: Muestra los ingresos totales por membresías del último mes. Se actualiza con el método `IngresosTotales_UltimoMes()`.
-- **Botón "Actualizar Ingresos"**: Llama al método `IngresosTotales_UltimoMes()` para actualizar la información mostrada en `lblIngresos`.
-- **Etiqueta `lblPromedio`**: Muestra la edad promedio de los clientes activos. Se actualiza con el método `promedio_edad()`.
-- **Botón "Actualizar Promedio Edad"**: Llama al método `promedio_edad()` para actualizar la información mostrada en `lblPromedio`.
-- **ComboBox `cboSucursales`**: Se llena con los nombres de las sucursales activas (no cerradas) cuando se llama a `seleccionarSucursales()`.
 
 Esta tabla proporciona una visión clara de cómo los métodos y los componentes de la interfaz de usuario (botones y otros elementos) están relacionados. 
 
@@ -167,19 +159,21 @@ Esta tabla proporciona una visión clara de cómo los métodos y los componentes
 
 ### Detalles de la Interfaz:
 
-- **Botón "Registrar Membresía" (`btnRegistroM`)**: Cuando se presiona, llama al método `btnRegistroMMouseClicked` para registrar una nueva membresía.
-- **Botón "Editar Membresía" (`btnEditarM`)**: Cuando se presiona, llama al método `btnEditarMMouseClicked` para editar la membresía seleccionada.
-- **Botón "Eliminar Membresía" (`btnEliminar`)**: Cuando se presiona, llama al método `btnEliminarMouseClicked` para eliminar la membresía seleccionada.
-- **Tabla `TablaMembresias`**: Al hacer clic en una fila, se llama al método `TablaMembresiasMouseClicked` para rellenar los campos de texto con los datos de la membresía seleccionada.
-- **Botón "Registrar Sucursal" (`btnRegistroG`)**: Cuando se presiona, llama al método `btnRegistroGMouseClicked` para registrar una nueva sucursal.
-- **Botón "Editar Sucursal" (`btnEditarG`)**: Cuando se presiona, llama al método `btnEditarGMouseClicked` para editar la sucursal seleccionada.
-- **Botón "Eliminar Sucursal" (`btnEliminarG1`)**: Cuando se presiona, llama al método `btnEliminarG1MouseClicked` para eliminar la sucursal seleccionada.
-- **Botón "Alta Sucursal" (`AltaS`)**: Cuando se presiona, llama al método `AltaSActionPerformed` para actualizar la fecha de alta de la sucursal seleccionada.
-- **Tabla `TablaSucursales`**: Al hacer clic en una fila, se selecciona la sucursal para edición o eliminación.
-- **Botón "Generar PDF Empleado" (`btnEnviar_EM`)**: Cuando se presiona, llama al método `btnEnviar_EMMouseClicked` para generar un PDF del empleado seleccionado.
-- **Botón "Generar PDF Cliente" (`btnEditar1`)**: Cuando se presiona, llama al método `btnEditar1MouseClicked` para generar un PDF del cliente seleccionado.
-- **Botón "Generar PDF Administrador" (`btnEditarA1`)**: Cuando se presiona, llama al método `btnEditarA1MouseClicked` para generar un PDF del administrador seleccionado.
-- **Tabla `TablaClientes`**: Se utiliza para mostrar los datos de los clientes y aplica un filtro de búsqueda si se proporciona texto en `txtBuscar`.
+| Elemento | Descripción |
+| --- | --- |
+| (`btnRegistroM`)** | Llama al método `btnRegistroMMouseClicked` para registrar una nueva membresía. |
+| (`btnEditarM`)** | Llama al método `btnEditarMMouseClicked` para editar la membresía seleccionada. |
+| (`btnEliminar`)** | Llama al método `btnEliminarMouseClicked` para eliminar la membresía seleccionada. |
+| **Tabla `TablaMembresias`** | Al hacer clic en una fila, se llama al método `TablaMembresiasMouseClicked` para rellenar los campos de texto con los datos de la membresía seleccionada. |
+| (`btnRegistroG`)** | Llama al método `btnRegistroGMouseClicked` para registrar una nueva sucursal. |
+| (`btnEditarG`)** | Llama al método `btnEditarGMouseClicked` para editar la sucursal seleccionada. |
+| (`btnEliminarG1`)** | Llama al método `btnEliminarG1MouseClicked` para eliminar la sucursal seleccionada. |
+| (`AltaS`)** | Llama al método `AltaSActionPerformed` para actualizar la fecha de alta de la sucursal seleccionada. |
+| **Tabla `TablaSucursales`** | Se utiliza para seleccionar la sucursal para edición o eliminación. |
+| (`btnEnviar_EM`)** | Llama al método `btnEnviar_EMMouseClicked` para generar un PDF del empleado seleccionado. |
+| (`btnEditar1`)** | Llama al método `btnEditar1MouseClicked` para generar un PDF del cliente seleccionado. |
+| (`btnEditarA1`)** | Llama al método `btnEditarA1MouseClicked` para generar un PDF del administrador seleccionado. |
+| **Tabla `TablaClientes`** | Se utiliza para mostrar los datos de los clientes y aplica un filtro de búsqueda si se proporciona texto en `txtBuscar`. |
 
 Esta tabla proporciona una visión clara de cómo los métodos y los componentes de la interfaz de usuario están relacionados.
 
