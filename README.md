@@ -82,7 +82,7 @@ Aqui se muestra tabla detallada que incluye la descripción de los métodos prop
 
 ### Detalles de la Interfaz:
 
-- **Botón "Mostrar Todas las Membresías"**: Cuando se presiona, llama al método `mostrarTodasM()` para llenar la tabla `TablaMembresias` con todas las membresías disponibles.
+- **"Mostrar Todas las Membresías"**: Cuando se presiona, llama al método `mostrarTodasM()` para llenar la tabla `TablaMembresias` con todas las membresías disponibles.
 - **Campo de Texto `txtBuscarM`**: Permite al usuario filtrar las membresías por nombre antes de llamar al método `mostrarTodasM()`.
 - **ComboBox `cboMembresias`**: Se llena con los nombres de las membresías cuando se llama a `seleccionarMembresias()`.
 - **Botón "Generar Gráficas"**: Llama al método `Graficas()` para generar y mostrar gráficos de pastel y barras en `jPanel3` y `jPanel6`.
@@ -95,6 +95,41 @@ Aqui se muestra tabla detallada que incluye la descripción de los métodos prop
 - **ComboBox `cboSucursales`**: Se llena con los nombres de las sucursales activas (no cerradas) cuando se llama a `seleccionarSucursales()`.
 
 Esta tabla proporciona una visión clara de cómo los métodos y los componentes de la interfaz de usuario (botones y otros elementos) están relacionados. 
+
+### JFrame Administrador
+
+| **Método** | **Descripción** | **Botón/Componente Asociado** |
+|------------|-----------------|-------------------------------|
+| `btnRegistroMMouseClicked` | Registra una nueva membresía con los datos proporcionados y actualiza la lista de membresías. | **Botón**: "Registrar Membresía" (`btnRegistroM`) <br> **Campos de Texto**: `txtNombreM`, `txtPrecioM`, `txtDescripcionM` |
+| `TablaMembresiasMouseClicked` | Rellena los campos de texto con los datos de la membresía seleccionada en la tabla. | **Tabla**: `TablaMembresias` <br> **Campos de Texto**: `txtNombreM`, `txtPrecioM`, `txtDescripcionM` |
+| `btnEliminarMouseClicked` | Elimina la membresía seleccionada en la tabla después de una confirmación del usuario. | **Botón**: "Eliminar Membresía" (`btnEliminar`) <br> **Tabla**: `TablaMembresias` |
+| `btnEditarMMouseClicked` | Edita la membresía seleccionada en la tabla con los datos proporcionados y actualiza la lista de membresías. | **Botón**: "Editar Membresía" (`btnEditarM`) <br> **Tabla**: `TablaMembresias` <br> **Campos de Texto**: `txtNombreM`, `txtPrecioM`, `txtDescripcionM` |
+| `btnRegistroGMouseClicked` | Registra una nueva sucursal con los datos proporcionados y actualiza la lista de sucursales. | **Botón**: "Registrar Sucursal" (`btnRegistroG`) <br> **Campos de Texto**: `txtNombreG`, `txtDireccionG` |
+| `btnEditarGMouseClicked` | Edita la sucursal seleccionada en la tabla con los datos proporcionados y actualiza la lista de sucursales. | **Botón**: "Editar Sucursal" (`btnEditarG`) <br> **Tabla**: `TablaSucursales` <br> **Campos de Texto**: `txtNombreG`, `txtDireccionG` |
+| `btnEliminarG1MouseClicked` | Elimina la sucursal seleccionada en la tabla después de una confirmación del usuario. | **Botón**: "Eliminar Sucursal" (`btnEliminarG1`) <br> **Tabla**: `TablaSucursales` |
+| `AltaSActionPerformed` | Actualiza la fecha de alta de la sucursal seleccionada en la tabla y actualiza la lista de sucursales. | **Botón**: "Alta Sucursal" (`AltaS`) <br> **Tabla**: `TablaSucursales` |
+| `btnEnviar_EMMouseClicked` | Genera un PDF con los datos del empleado seleccionado en la tabla. | **Botón**: "Generar PDF Empleado" (`btnEnviar_EM`) <br> **Tabla**: `TablaEmpleados` |
+| `btnEditar1MouseClicked` | Genera un PDF con los datos del cliente seleccionado en la tabla. | **Botón**: "Generar PDF Cliente" (`btnEditar1`) <br> **Tabla**: `TablaClientes` |
+| `btnEditarA1MouseClicked` | Genera un PDF con los datos del administrador seleccionado en la tabla. | **Botón**: "Generar PDF Administrador" (`btnEditarA1`) <br> **Tabla**: `TablaAdministradores` |
+| `mostrarDatos` | Muestra los datos de los clientes en la tabla `TablaClientes`, aplicando un filtro si se proporciona un texto de búsqueda. | **Tabla**: `TablaClientes` <br> **Campo de Texto**: `txtBuscar` |
+
+### Detalles de la Interfaz:
+
+- **Botón "Registrar Membresía" (`btnRegistroM`)**: Cuando se presiona, llama al método `btnRegistroMMouseClicked` para registrar una nueva membresía.
+- **Botón "Editar Membresía" (`btnEditarM`)**: Cuando se presiona, llama al método `btnEditarMMouseClicked` para editar la membresía seleccionada.
+- **Botón "Eliminar Membresía" (`btnEliminar`)**: Cuando se presiona, llama al método `btnEliminarMouseClicked` para eliminar la membresía seleccionada.
+- **Tabla `TablaMembresias`**: Al hacer clic en una fila, se llama al método `TablaMembresiasMouseClicked` para rellenar los campos de texto con los datos de la membresía seleccionada.
+- **Botón "Registrar Sucursal" (`btnRegistroG`)**: Cuando se presiona, llama al método `btnRegistroGMouseClicked` para registrar una nueva sucursal.
+- **Botón "Editar Sucursal" (`btnEditarG`)**: Cuando se presiona, llama al método `btnEditarGMouseClicked` para editar la sucursal seleccionada.
+- **Botón "Eliminar Sucursal" (`btnEliminarG1`)**: Cuando se presiona, llama al método `btnEliminarG1MouseClicked` para eliminar la sucursal seleccionada.
+- **Botón "Alta Sucursal" (`AltaS`)**: Cuando se presiona, llama al método `AltaSActionPerformed` para actualizar la fecha de alta de la sucursal seleccionada.
+- **Tabla `TablaSucursales`**: Al hacer clic en una fila, se selecciona la sucursal para edición o eliminación.
+- **Botón "Generar PDF Empleado" (`btnEnviar_EM`)**: Cuando se presiona, llama al método `btnEnviar_EMMouseClicked` para generar un PDF del empleado seleccionado.
+- **Botón "Generar PDF Cliente" (`btnEditar1`)**: Cuando se presiona, llama al método `btnEditar1MouseClicked` para generar un PDF del cliente seleccionado.
+- **Botón "Generar PDF Administrador" (`btnEditarA1`)**: Cuando se presiona, llama al método `btnEditarA1MouseClicked` para generar un PDF del administrador seleccionado.
+- **Tabla `TablaClientes`**: Se utiliza para mostrar los datos de los clientes y aplica un filtro de búsqueda si se proporciona texto en `txtBuscar`.
+
+Esta tabla proporciona una visión clara de cómo los métodos y los componentes de la interfaz de usuario están relacionados.
 
 ## Instalación
 
