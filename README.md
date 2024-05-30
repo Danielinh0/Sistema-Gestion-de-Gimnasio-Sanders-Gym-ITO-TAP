@@ -65,8 +65,36 @@ En esta clase tenemos todos los métodos ocupados para el funcionamiento correct
 | `obtenerUltimoIdMembresia()` | Obtiene el último `id_membresia` insertado en la tabla `membresia`. Utiliza la conexión de la clase `Conexion` y muestra un mensaje de error si la consulta falla. |
 | `ActualizarCliente(int id_cliente, String Nombre, String A_Paterno, String A_Materno, String CURP, String Direccion, String Telefono, int Edad, String correo)` | Actualiza los datos del cliente en las tablas `Persona` y `Cliente` con los datos proporcionados. Utiliza la conexión de la clase `Conexion` y muestra un mensaje de error si la actualización falla. |
 
+### Jframe Empleado
 
 
+Aqui se muestra tabla detallada que incluye la descripción de los métodos proporcionados junto con los botones que interactúan con estos métodos en nuestra interfaz gráfica:
+
+| **Método** | **Descripción** | **Botón/Componente Asociado** |
+|------------|-----------------|-------------------------------|
+| `mostrarTodasM()` | Muestra todas las membresías en una tabla, incluyendo el número, nombre, precio, descripción y cantidad de clientes asociados. Si hay un filtro de búsqueda, se aplica a la consulta. | **Botón**: "Mostrar Todas las Membresías" <br> **Campo de Texto**: `txtBuscarM` (para filtrar) <br> **Tabla**: `TablaMembresias` |
+| `seleccionarMembresias()` | Llena un `JComboBox` con los nombres de todas las membresías distintas. | **ComboBox**: `cboMembresias` |
+| `Graficas()` | Genera gráficos de pastel y de barras utilizando `JFreeChart` y los muestra en paneles de la interfaz gráfica. | **Botón**: "Generar Gráficas" <br> **Paneles**: `jPanel3`, `jPanel6` |
+| `clientesNuevosxMes()` | Muestra la cantidad de nuevos clientes inscritos en el mes actual en una etiqueta (`lblCLN`). | **Etiqueta**: `lblCLN` <br> **Botón**: "Actualizar Clientes Nuevos" |
+| `IngresosTotales_UltimoMes()` | Calcula y muestra los ingresos totales por membresías del último mes en una etiqueta (`lblIngresos`). | **Etiqueta**: `lblIngresos` <br> **Botón**: "Actualizar Ingresos" |
+| `promedio_edad()` | Calcula y muestra la edad promedio de los clientes activos en una etiqueta (`lblPromedio`). | **Etiqueta**: `lblPromedio` <br> **Botón**: "Actualizar Promedio Edad" |
+| `seleccionarSucursales()` | Llena un `JComboBox` con los nombres de todas las sucursales que no han sido cerradas. | **ComboBox**: `cboSucursales` |
+
+### Detalles de la Interfaz:
+
+- **Botón "Mostrar Todas las Membresías"**: Cuando se presiona, llama al método `mostrarTodasM()` para llenar la tabla `TablaMembresias` con todas las membresías disponibles.
+- **Campo de Texto `txtBuscarM`**: Permite al usuario filtrar las membresías por nombre antes de llamar al método `mostrarTodasM()`.
+- **ComboBox `cboMembresias`**: Se llena con los nombres de las membresías cuando se llama a `seleccionarMembresias()`.
+- **Botón "Generar Gráficas"**: Llama al método `Graficas()` para generar y mostrar gráficos de pastel y barras en `jPanel3` y `jPanel6`.
+- **Etiqueta `lblCLN`**: Muestra el número de clientes nuevos del mes actual. Se actualiza con el método `clientesNuevosxMes()`.
+- **Botón "Actualizar Clientes Nuevos"**: Llama al método `clientesNuevosxMes()` para actualizar la información mostrada en `lblCLN`.
+- **Etiqueta `lblIngresos`**: Muestra los ingresos totales por membresías del último mes. Se actualiza con el método `IngresosTotales_UltimoMes()`.
+- **Botón "Actualizar Ingresos"**: Llama al método `IngresosTotales_UltimoMes()` para actualizar la información mostrada en `lblIngresos`.
+- **Etiqueta `lblPromedio`**: Muestra la edad promedio de los clientes activos. Se actualiza con el método `promedio_edad()`.
+- **Botón "Actualizar Promedio Edad"**: Llama al método `promedio_edad()` para actualizar la información mostrada en `lblPromedio`.
+- **ComboBox `cboSucursales`**: Se llena con los nombres de las sucursales activas (no cerradas) cuando se llama a `seleccionarSucursales()`.
+
+Esta tabla proporciona una visión clara de cómo los métodos y los componentes de la interfaz de usuario (botones y otros elementos) están relacionados. 
 
 ## Instalación
 
