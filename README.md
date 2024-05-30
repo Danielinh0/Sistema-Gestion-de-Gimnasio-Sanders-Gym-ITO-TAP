@@ -70,6 +70,57 @@ En esta clase tenemos todos los métodos ocupados para el funcionamiento correct
 
 Aqui se muestra tabla detallada que incluye la descripción de los métodos proporcionados junto con los botones que interactúan con estos métodos en nuestra interfaz gráfica:
 
+| Botón/Elemento               | Función                                                      | Código Asociado                                                                                       |
+|------------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| `PLinicio`                   | Cambiar a la vista de inicio y actualizar estadísticas       | `pnVentanas.setSelectedIndex(0); lblTextoMorado.setText("Inicio"); Graficas(); clientesNuevosxMes(); IngresosTotales_UltimoMes(); promedio_edad();` |
+| `PLusuario`                  | Cerrar la ventana actual y abrir la ventana de login          | `this.dispose(); login log = new login(); log.setVisible(true);`                                       |
+| `PLsalir`                    | Confirmar y cerrar el programa                                | `int response = JOptionPane.showConfirmDialog(Empleado.this, "¿Seguro que deseas cerrar el programa?", "Confirmar Cierre", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE); if (response == JOptionPane.YES_OPTION) { this.dispose(); }` |
+| `TablaClientes`              | Seleccionar cliente y mostrar sus datos en los campos         | `fila = TablaClientes.getSelectedRow(); int id = Integer.parseInt((String) TablaClientes.getValueAt(fila, 0)); ...` (consulta y muestra datos en campos) |
+| `btnEditar`                  | Validar y actualizar datos del cliente seleccionado           | `String Nombre = txtNombre.getText().trim(); ...` (validaciones y actualización de datos)               |
+| `btnRegistro`                | Registrar un nuevo cliente con validaciones y asociaciones    | `String Nombre = txtNombre.getText().trim(); ...` (validaciones y registro de datos)                    |
+| `btnEditar1`                 | Crear PDF con los datos del cliente seleccionado              | `Clases.Metodos objetoRegistro = new Clases.Metodos(); fila = TablaClientes.getSelectedRow(); int id = Integer.parseInt((String) TablaClientes.getValueAt(fila, 0)); ...` (creación de PDF) |
+
+### Descripción de las funciones:
+
+1. **PLinicioMouseClicked**
+   - Cambia la vista a la pestaña de inicio.
+   - Actualiza el texto de `lblTextoMorado` a "Inicio".
+   - Llama a varias funciones para actualizar las estadísticas en la vista.
+
+2. **PLusuarioMouseClicked**
+   - Cierra la ventana actual.
+   - Crea y muestra una nueva instancia de la ventana de login.
+
+3. **PLsalirMouseClicked**
+   - Muestra un cuadro de diálogo para confirmar la salida del programa.
+   - Si el usuario confirma, cierra el programa.
+
+4. **TablaClientesMouseClicked**
+   - Obtiene la fila seleccionada en la tabla `TablaClientes`.
+   - Realiza una consulta a la base de datos para obtener más detalles del cliente seleccionado.
+   - Muestra los datos obtenidos en varios campos de texto en la interfaz.
+
+5. **btnEditarMouseClicked**
+   - Obtiene y valida los datos de los campos de texto.
+   - Actualiza los datos del cliente en la base de datos.
+   - Muestra un mensaje de éxito o error según el resultado de la operación.
+   - Crea un PDF con los datos actualizados del cliente.
+
+6. **btnRegistroMouseClicked**
+   - Obtiene y valida los datos de los campos de texto.
+   - Registra un nuevo cliente en la base de datos.
+   - Asocia la membresía y sucursal al nuevo cliente.
+   - Muestra un mensaje de éxito o error según el resultado de la operación.
+   - Crea un PDF con los datos del nuevo cliente.
+
+7. **btnEditar1MouseClicked**
+   - Obtiene el ID del cliente seleccionado en la tabla.
+   - Crea un PDF con los datos del cliente.
+
+Estas funciones están diseñadas para manejar la interacción del usuario con la interfaz de usuario (UI), asegurando que los datos se obtengan, validen, muestren y actualicen correctamente en la base de datos y la interfaz gráfica.
+
+
+
 | **Método** | **Descripción** | **Botón/Componente Asociado** |
 |------------|-----------------|-------------------------------|
 | `mostrarTodasM()` | Muestra todas las membresías en una tabla, incluyendo el número, nombre, precio, descripción y cantidad de clientes asociados. Si hay un filtro de búsqueda, se aplica a la consulta. | **Botón**: "Mostrar Todas las Membresías" <br> **Campo de Texto**: `txtBuscarM` (para filtrar) <br> **Tabla**: `TablaMembresias` |
@@ -79,6 +130,7 @@ Aqui se muestra tabla detallada que incluye la descripción de los métodos prop
 | `IngresosTotales_UltimoMes()` | Calcula y muestra los ingresos totales por membresías del último mes en una etiqueta (`lblIngresos`). | **Etiqueta**: `lblIngresos` <br> **Botón**: "Actualizar Ingresos" |
 | `promedio_edad()` | Calcula y muestra la edad promedio de los clientes activos en una etiqueta (`lblPromedio`). | **Etiqueta**: `lblPromedio` <br> **Botón**: "Actualizar Promedio Edad" |
 | `seleccionarSucursales()` | Llena un `JComboBox` con los nombres de todas las sucursales que no han sido cerradas. | **ComboBox**: `cboSucursales` |
+
 
 ### Detalles de la Interfaz:
 
