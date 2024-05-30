@@ -52,7 +52,7 @@ En esta clase tenemos todos los métodos ocupados para el funcionamiento correct
 | `generarGraficoBarras()` | Genera un gráfico de barras con el número de personas que tienen diferentes membresías. **Con los debidos métodos utilizados:** `obtenerConexion()`, `createStatement()` de `Connection`, `executeQuery(String sql)` de `Statement`, `addValue(...)` de `DefaultCategoryDataset`, `createBarChart(...)` de `ChartFactory`. |
 | `enviarCorreoConPDF(String correoDestino, String archivoPDF)` | Envía un correo electrónico con un archivo PDF adjunto. **Con los debidos métodos utilizados:** `getInstance(Properties props, Authenticator authenticator)` de `Session`, `setFrom(...)`, `setRecipients(...)`, `setSubject(...)`, `setContent(...)` de `Message`, Métodos de `MimeBodyPart` y `Multipart`, `send(Message msg)` de `Transport`. |
 
-## Instalación y Uso
+## Instalación
 
 ### Descarga del repositorio y sus librerias
 
@@ -162,7 +162,7 @@ Para limpiarlo daremos Clic derecho sobre el proyecto, apareciendo así la opci�
 
 Hemos terminado de instalar la aplicación, ahora iremos a las pruebas de funcionamiento.
 
-### Modelo Vista Controlador
+## Modelo Vista Controlador
 
 Antes de mostrar el funcionamiento tenemos que hablar de los siguientes frames dentro del paquete *Listos*.
 
@@ -264,7 +264,7 @@ Para también después plasmar toda la información en una serie de graficas vis
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/a44ff962-1fac-47e3-b323-0b6a0f4c2611)
 
 
-### Funcionamiento
+## Funcionamiento
 
 Entramos al funcionamiento del programa., para ello se mostrará con capturas parte por parte lo esencial de este mismo. E indicando en que apartados se ocupa
 
@@ -321,7 +321,47 @@ En caso de que este correo y contraseña sean de parte de un `Empleado` el frame
 
 ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/9a8f82e0-01c5-40a4-8b42-e667581b278c)
 
-Nota: Cabe recalcar que, para la lógica de nuestro negocio, el administrador siempre tendrá más opciones dentro del programa que un empleado *Asalariado*
+Nota: Cabe recalcar que, para la lógica de nuestro negocio, el administrador siempre tendrá más opciones dentro del programa que un empleado *Asalariado*.
+
+El administrador podrá ingresar empleados nuevos o administradores nuevos, gracias a los botones `Registrar` estos nuevos `empleados` o `administradores` serán agregados a la base de datos, también este botón es capaz de generar correos y contraseñas gracias al método `GenerarContraseñaAleatoria`. Estos correos y contraseñas que se les generan son para que despues ellos puedan logearse a este programa y tengan su respectivo rol.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/88180336-039f-44fe-8a3e-d68b728a5469)
+
+
+También nos generara un pdf con los datos asociados a dicho administrador o empleado dependiendo de lo que se esté registrando. Para ello tenemos este ejemplo
+
+Crearemos un nuevo administrador con estos datos
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/a1ece0fe-7cad-4959-bf39-a7307a2dae18)
+
+
+Al momento de dar en el botón *Registrar* se nos mostrara las siguientes ventanas de texto. Esto gracias al método `GuardarDatosEmpleado` y también al método `GuardarDatosPersona`
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/afda6e10-4536-49b5-950d-9f3ff9e10362)
+
+
+Podremos Guardar El Pdf dentro de nuestro equipo en el lugar que sea de mayor conveniencia, para hacer esto se hizo uso del método `CrearPDFAdmin `, dento de este se ocupa una librería llamada `FileChooser` la cual la implementamos y hace lo mostrado.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/80f6f9f6-9dc0-4165-bbca-017df84dd0de)
+
+
+Una vez se haya encontrado la carpeta ideal, solo es cuestión de guardarlo.
+Para después saltar de nuevo a nuestro programa con la siguiente ventana, esto es generado también por el método `GenerarPDFAdmin`
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/c75aea9d-5165-42c2-8d37-d6c2e3147d84)
+
+
+Si se aceptar abrir el archivo se nos mostrara el siguiente PDF.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/a1fafb42-128a-43d2-b46c-6bf60f93416f)
+
+
+Este procedimiento es básicamente lo mismo para `empleado` y `cliente`.
+
+Agregamos un empleado Nuevo y su PDF es el siguiente. Cada PDF, según sea el tipo de usuario tendrá un asunto diferente.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/4e844463-d6f3-4bc1-ad4e-1e7015df2090)
+
 
 
 
