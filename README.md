@@ -280,9 +280,48 @@ En nuestro caso tenemos una clase con la conexión de la base de datos y una cla
 
 
 Comenzamos de lleno con el frame de login.
-Este frame es el inicio de todo lo que se verá más adelante, dentro de este se ocupa el método `ValidarUsuario` sobre el botón `login `
+Este frame es el inicio de todo lo que se verá más adelante, dentro de este se ocupa el método `ValidarUsuario` sobre el botón `login`
+
+  ![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/dfa27815-09f7-4cc9-beca-6ed92ec03ea3)
 
 
+Las primeras impresiones de este frame es que necesita de un correo y una contraseña única y dada por nuestra empresa, eso solamente si se es `Empleado` o `Administrador`.
+Una validación muy agrable es el de los campos vacíos, el usuario no puede logearse sin haber requisitado cada espacio en blanco.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/d0d7d887-1327-4de4-9389-1c07572f5a9b)
+
+En esta ocasión vamos a tomar algún `Administrador` de nuestra base de datos.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/62c35013-f5f3-46f8-9888-a75989e4305c)
+
+Al igual su contraseña, que es generada de manera automática por un método llamado `GenerarContraseñaAleatoria`.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/4a8edd51-e8cc-48d5-b0a4-511c32c53446)
+
+
+También hay que tener cuidado al momento de ingresar los datos para logearse ya que, si estos están mal, aparecerá un mensaje indicando el error.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/8cefef0d-050b-4f63-b0b7-5b0095a94b27)
+
+Y este al instante setteara los campos en blanco
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/8fdb2308-4526-4418-b6e8-5839fd109279)
+
+
+En esta ocasión nos logearemos con un perfil de `Administrador`, al momento de presionar al botón, se nos abrirá el frame indicado, gracias al metodo `ValidarUsuario`.
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/70cd3ce8-957c-4776-84bc-45cc9434ad6c)
+
+Mostrando así el frame de administrador u empleado dependiendo de quien haya iniciado sesión, mostrando sus datos y graficas en tiempo real sobre lo que sucede en dicho negocio, estas graficas fueron generadas gracias al método `GenerarGraficoPastel` y a `GenerarGraficoBarras`
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/1a312462-b7c2-461c-b96a-c3537d75acc5)
+
+
+En caso de que este correo y contraseña sean de parte de un `Empleado` el frame indicado sera este:
+
+![image](https://github.com/Danielinh0/Sistema-Gestion-de-Gimnasio-Sanders-Gym-ITO-TAP/assets/168355421/9a8f82e0-01c5-40a4-8b42-e667581b278c)
+
+Nota: Cabe recalcar que, para la lógica de nuestro negocio, el administrador siempre tendrá más opciones dentro del programa que un empleado *Asalariado*
 
 
 
