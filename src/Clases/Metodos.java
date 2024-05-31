@@ -954,7 +954,7 @@ public class Metodos {
 
                     preguntarAbrirPDF(fileToSave.getAbsolutePath());
                     // Llamar al método para enviar el correo con el PDF adjunto
-                    //enviarCorreoConPDF(correo, fileToSave.getAbsolutePath());
+                    enviarCorreoConPDFE(correo, fileToSave.getAbsolutePath() , nombre, sucursal, precio, tipoM);
                 }
 
             }
@@ -1773,6 +1773,117 @@ public class Metodos {
             + "                <p><strong>Detalles de tu membresía:</strong></p>"
             + "                <p>Tipo de membresía: %s<br>Precio: $%d</p>"
             + "                <p>Esperamos que disfrutes de todos los beneficios que ofrecemos y logres alcanzar tus objetivos de salud y bienestar.</p>"
+            + "                <p>¡Gracias por elegirnos!</p>"
+            + "                <p>Saludos cordiales,<br>El equipo de %s</p>"
+            + "            </td>"
+            + "        </tr>"
+            + "    </table>"
+            + "</div>"
+            + "</body>"
+            + "</html>",
+            nombre, tipoM, precio, nombreS
+        );
+
+        MimeBodyPart mimeBodyPart = new MimeBodyPart();
+        mimeBodyPart.setContent(htmlContent, "text/html; charset=utf-8");
+
+        MimeBodyPart attachmentPart = new MimeBodyPart();
+        attachmentPart.attachFile(new File(archivoPDF));
+
+        Multipart multipart = new MimeMultipart();
+        multipart.addBodyPart(mimeBodyPart);
+        multipart.addBodyPart(attachmentPart);
+
+        message.setContent(multipart);
+
+        Transport.send(message);
+
+        JOptionPane.showMessageDialog(null, "Correo enviado exitosamente a " + correoDestino);
+
+    } catch (MessagingException | IOException e) {
+        e.printStackTrace();
+    }
+}
+    
+    
+    public void enviarCorreoConPDFE(String correoDestino, String archivoPDF, String nombre, String nombreS, int precio, String tipoM) {
+    Properties props = new Properties();
+    props.put("mail.smtp.auth", "true");
+    props.put("mail.smtp.starttls.enable", "true");
+    props.put("mail.smtp.host", "smtp.gmail.com");
+    props.put("mail.smtp.port", "587"); // Cambia a 465 si usas SSL
+
+    String usuario = "pruebademicomponente@gmail.com"; // Cambia esto por tu correo de Gmail
+    String clave = "dssjlwbildsrtnak"; // Cambia esto por tu contraseña de Gmail
+
+    javax.mail.Session session = javax.mail.Session.getInstance(props, new javax.mail.Authenticator() {
+        protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+            return new javax.mail.PasswordAuthentication(usuario, clave);
+        }
+    });
+
+    try {
+        javax.mail.Message message = new MimeMessage(session);
+        message.setFrom(new InternetAddress(usuario));
+        message.setRecipients(javax.mail.Message.RecipientType.TO, InternetAddress.parse(correoDestino));
+        message.setSubject("Registro de Membresía");
+
+        String htmlContent = String.format(
+            "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+            + "<html dir=\"ltr\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" lang=\"es\">"
+            + "<head>"
+            + "<meta charset=\"UTF-8\">"
+            + "<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">"
+            + "<meta name=\"x-apple-disable-message-reformatting\">"
+            + "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+            + "<meta content=\"telephone=no\" name=\"format-detection\">"
+            + "<title>Registro de Membresía</title>"
+            + "<style type=\"text/css\">"
+            + "body {"
+            + "    width: 100%%;"
+            + "    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"
+            + "    -webkit-text-size-adjust: 100%%;"
+            + "    -ms-text-size-adjust: 100%%;"
+            + "    padding: 0;"
+            + "    margin: 0;"
+            + "}"
+            + ".es-wrapper {"
+            + "    width: 100%%;"
+            + "    height: 100%%;"
+            + "    background-color: #FAFAFA;"
+            + "    display: flex;"
+            + "    justify-content: center;"
+            + "    align-items: center;"
+            + "}"
+            + ".es-content-body {"
+            + "    background-color: #FFFFFF;"
+            + "    width: 600px;"
+            + "    margin: auto;"
+            + "    padding: 20px;"
+            + "    border: 1px solid #CCCCCC;"
+            + "}"
+            + ".es-content-body h1 {"
+            + "    color: #333333;"
+            + "    font-size: 44px;"
+            + "    font-weight: bold;"
+            + "}"
+            + ".es-content-body p {"
+            + "    color: #666666;"
+            + "    font-size: 14px;"
+            + "}"
+            + "</style>"
+            + "</head>"
+            + "<body>"
+            + "<div class=\"es-wrapper\">"
+            + "    <table class=\"es-content-body\" cellpadding=\"0\" cellspacing=\"0\">"
+            + "        <tr>"
+            + "            <td align=\"center\">"
+            + "                <h1>Edición de datos</h1>"
+            + "                <p><strong>Estimado %s,</strong></p>"
+            + "                <p>Por este medio se te notifica que se han actualizado correctamente tus datos en nuestro sistema.</p>"
+            + "                <p><strong>Detalles de tu membresía:</strong></p>"
+            + "                <p>Tipo de membresía: %s<br>Precio: $%d</p>"
+            + "                <p>Esperamos que sigas disfrutando de todos los beneficios que ofrecemos y logres alcanzar tus objetivos de salud y bienestar.</p>"
             + "                <p>¡Gracias por elegirnos!</p>"
             + "                <p>Saludos cordiales,<br>El equipo de %s</p>"
             + "            </td>"
