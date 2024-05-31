@@ -42,6 +42,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
@@ -78,8 +79,7 @@ public class Metodos {
         }
         return sb.toString();
     }
-
-        public void validarUsuario(String correo, String contraseña, JFrame loginFrame) {
+    public void validarUsuario(String correo, String contraseña, JFrame loginFrame) {
             PreparedStatement ps = null;
             ResultSet rs = null;
             Connection con = null;
@@ -171,7 +171,6 @@ public class Metodos {
                 }
             }
         }
-
     public void GuardarDatosPersona(String Nombre, String A_Paterno, String A_Materno, String CURP, String Direccion, String Telefono, int Edad) {
         try {
             PreparedStatement ps = null;
@@ -207,7 +206,6 @@ public class Metodos {
             System.out.println("Error" + e);
         }
     }
-
     public void GuardarCorreoYFechaCliente(int id_cliente, String correo_cliente, Date fecha_inscripcion) {
         try {
             PreparedStatement ps = null;
@@ -240,7 +238,6 @@ public class Metodos {
         }
 
     }
-
     public void GuardarDatosEmpleado(int id_empleado, String correo_empleado, int Salario, String Horario, Date FechaContratacion) {
         try {
             PreparedStatement ps = null;
@@ -274,7 +271,6 @@ public class Metodos {
             JOptionPane.showMessageDialog(null, "Error: " + e.toString());
         }
     }
-
     public void GuardarRolEmpleado(int id_asalariado, String contra_asa, String Rol) {
         try {
             PreparedStatement ps = null;
@@ -719,7 +715,6 @@ public class Metodos {
         }
 
     }
-
     public void crearPDF(int id_persona) throws FileNotFoundException, MalformedURLException, IOException {
         Conexion con = new Conexion();
         Connection cn = null;
@@ -826,8 +821,8 @@ public class Metodos {
                     }
 
                     preguntarAbrirPDF(fileToSave.getAbsolutePath());
-                    // Llamar al método para enviar el correo con el PDF adjunto
-                    enviarCorreoConPDF(correo, fileToSave.getAbsolutePath());
+                   
+                    enviarCorreoConPDF(correo, fileToSave.getAbsolutePath() , nombre, sucursal, precio, tipoM);
                 }
 
             }
@@ -959,7 +954,7 @@ public class Metodos {
 
                     preguntarAbrirPDF(fileToSave.getAbsolutePath());
                     // Llamar al método para enviar el correo con el PDF adjunto
-                    enviarCorreoConPDF(correo, fileToSave.getAbsolutePath());
+                    //enviarCorreoConPDF(correo, fileToSave.getAbsolutePath());
                 }
 
             }
@@ -984,7 +979,6 @@ public class Metodos {
         }
 
     }
-
     public void crearPDFEmpleado(int id_persona) throws FileNotFoundException, MalformedURLException, IOException {
         Conexion con = new Conexion();
         Connection cn = null;
@@ -1259,8 +1253,6 @@ public class Metodos {
             }
         }
     }
-    
-
     public void crearPDFAdministrador(int id_persona) throws FileNotFoundException, MalformedURLException, IOException {
         Conexion con = new Conexion();
         Connection cn = null;
@@ -1395,7 +1387,6 @@ public class Metodos {
             }
         }
     }
-    
     public void crearPDFAdministrador_ED(int id_persona) throws FileNotFoundException, MalformedURLException, IOException {
         Conexion con = new Conexion();
         Connection cn = null;
@@ -1530,7 +1521,6 @@ public class Metodos {
             }
         }
     }
-    
     private void preguntarAbrirPDF(String filePath) {
         int res = JOptionPane.showConfirmDialog(null,
                 "Se creó el registro en PDF en la ubicación especificada.\n\n¿Desea ver el archivo?",
@@ -1552,7 +1542,7 @@ public class Metodos {
             }
         }
     }
-
+    
     private Connection obtenerConexion() {
         Conexion conexion = new Conexion();
         return conexion.conectar();
@@ -1705,50 +1695,116 @@ public class Metodos {
 
         return barChart;
     }
+    public void enviarCorreoConPDF(String correoDestino, String archivoPDF, String nombre, String nombreS, int precio, String tipoM) {
+    Properties props = new Properties();
+    props.put("mail.smtp.auth", "true");
+    props.put("mail.smtp.starttls.enable", "true");
+    props.put("mail.smtp.host", "smtp.gmail.com");
+    props.put("mail.smtp.port", "587"); // Cambia a 465 si usas SSL
 
-    public void enviarCorreoConPDF(String correoDestino, String archivoPDF) {
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587"); // Cambia a 465 si usas SSL
+    String usuario = "pruebademicomponente@gmail.com"; // Cambia esto por tu correo de Gmail
+    String clave = "dssjlwbildsrtnak"; // Cambia esto por tu contraseña de Gmail
 
-        String usuario = "pruebademicomponente@gmail.com"; // Cambia esto por tu correo de Gmail
-        String clave = "dssjlwbildsrtnak"; // Cambia esto por tu contraseña de Gmail
-
-        javax.mail.Session session = javax.mail.Session.getInstance(props, new javax.mail.Authenticator() {
-            protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                return new javax.mail.PasswordAuthentication(usuario, clave);
-            }
-        });
-
-        try {
-            javax.mail.Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(usuario));
-            message.setRecipients(javax.mail.Message.RecipientType.TO, InternetAddress.parse(correoDestino));
-            message.setSubject("Registro de Membresía");
-
-            MimeBodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText("Adjunto encontrarás el PDF con el registro de tu membresía.");
-
-            MimeBodyPart attachmentPart = new MimeBodyPart();
-            attachmentPart.attachFile(new File(archivoPDF));
-
-            Multipart multipart = new MimeMultipart();
-            multipart.addBodyPart(messageBodyPart);
-            multipart.addBodyPart(attachmentPart);
-
-            message.setContent(multipart);
-
-            javax.mail.Transport.send(message);
-
-            JOptionPane.showMessageDialog(null, "Correo enviado exitosamente a " + correoDestino);
-
-        } catch (MessagingException | IOException e) {
-            e.printStackTrace();
+    javax.mail.Session session = javax.mail.Session.getInstance(props, new javax.mail.Authenticator() {
+        protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+            return new javax.mail.PasswordAuthentication(usuario, clave);
         }
-    }
+    });
 
+    try {
+        javax.mail.Message message = new MimeMessage(session);
+        message.setFrom(new InternetAddress(usuario));
+        message.setRecipients(javax.mail.Message.RecipientType.TO, InternetAddress.parse(correoDestino));
+        message.setSubject("Registro de Membresía");
+
+        String htmlContent = String.format(
+            "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
+            + "<html dir=\"ltr\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" lang=\"es\">"
+            + "<head>"
+            + "<meta charset=\"UTF-8\">"
+            + "<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">"
+            + "<meta name=\"x-apple-disable-message-reformatting\">"
+            + "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+            + "<meta content=\"telephone=no\" name=\"format-detection\">"
+            + "<title>Registro de Membresía</title>"
+            + "<style type=\"text/css\">"
+            + "body {"
+            + "    width: 100%%;"
+            + "    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"
+            + "    -webkit-text-size-adjust: 100%%;"
+            + "    -ms-text-size-adjust: 100%%;"
+            + "    padding: 0;"
+            + "    margin: 0;"
+            + "}"
+            + ".es-wrapper {"
+            + "    width: 100%%;"
+            + "    height: 100%%;"
+            + "    background-color: #FAFAFA;"
+            + "    display: flex;"
+            + "    justify-content: center;"
+            + "    align-items: center;"
+            + "}"
+            + ".es-content-body {"
+            + "    background-color: #FFFFFF;"
+            + "    width: 600px;"
+            + "    margin: auto;"
+            + "    padding: 20px;"
+            + "    border: 1px solid #CCCCCC;"
+            + "}"
+            + ".es-content-body h1 {"
+            + "    color: #333333;"
+            + "    font-size: 44px;"
+            + "    font-weight: bold;"
+            + "}"
+            + ".es-content-body p {"
+            + "    color: #666666;"
+            + "    font-size: 14px;"
+            + "}"
+            + "</style>"
+            + "</head>"
+            + "<body>"
+            + "<div class=\"es-wrapper\">"
+            + "    <table class=\"es-content-body\" cellpadding=\"0\" cellspacing=\"0\">"
+            + "        <tr>"
+            + "            <td align=\"center\">"
+            + "                <h1>¡Gracias por tu inscripción!</h1>"
+            + "                <p><strong>Estimado %s,</strong></p>"
+            + "                <p>Te damos la bienvenida a nuestra familia de fitness. Nos complace informarte que has sido registrado exitosamente en nuestro sistema.</p>"
+            + "                <p><strong>Detalles de tu membresía:</strong></p>"
+            + "                <p>Tipo de membresía: %s<br>Precio: $%d</p>"
+            + "                <p>Esperamos que disfrutes de todos los beneficios que ofrecemos y logres alcanzar tus objetivos de salud y bienestar.</p>"
+            + "                <p>¡Gracias por elegirnos!</p>"
+            + "                <p>Saludos cordiales,<br>El equipo de %s</p>"
+            + "            </td>"
+            + "        </tr>"
+            + "    </table>"
+            + "</div>"
+            + "</body>"
+            + "</html>",
+            nombre, tipoM, precio, nombreS
+        );
+
+        MimeBodyPart mimeBodyPart = new MimeBodyPart();
+        mimeBodyPart.setContent(htmlContent, "text/html; charset=utf-8");
+
+        MimeBodyPart attachmentPart = new MimeBodyPart();
+        attachmentPart.attachFile(new File(archivoPDF));
+
+        Multipart multipart = new MimeMultipart();
+        multipart.addBodyPart(mimeBodyPart);
+        multipart.addBodyPart(attachmentPart);
+
+        message.setContent(multipart);
+
+        Transport.send(message);
+
+        JOptionPane.showMessageDialog(null, "Correo enviado exitosamente a " + correoDestino);
+
+    } catch (MessagingException | IOException e) {
+        e.printStackTrace();
+    }
+}
+    
     public void setGimnasioEmpleado(String n, int id, Date fecha) {
         Conexion con = new Conexion();
         Connection cn = null;
@@ -1800,7 +1856,6 @@ public class Metodos {
             }
         }
     }
-
     public void ActualizarFechaEmpleados(int id_persona) {
         String consultaEmpleados = "select fechacontratacion, fecha_despido from empleado where id_empleado = ?";
         Date hoy = new Date();
@@ -1840,7 +1895,6 @@ public class Metodos {
             JOptionPane.showMessageDialog(null, "Error al actualizar la fecha del empleado: " + e.getMessage());
         }
     }
-
     public void ActualizarEmpleado(int id_empleado, String Nombre, String A_Paterno, String A_Materno, String CURP, String Direccion, String Telefono, int Edad, int Salario, String Horario) {
         try {
             PreparedStatement ps = null;
@@ -1870,7 +1924,6 @@ public class Metodos {
             e.printStackTrace();
         }
     }
-
     public void cambiarContraseniaAdmin(int id_empleado, String contra) {
 
         try {
@@ -1890,7 +1943,6 @@ public class Metodos {
         }
 
     }
-
     public void ActualizarSucursal(int id_empleado, String Nombre_Sucursal) {
 
         String consultaGimnasio = "select distinct nombre, direccion, fecha_apertura from gimnasio where nombre = ?";
@@ -1924,7 +1976,6 @@ public class Metodos {
         }
 
     }
-
     public void cambiarContraseniaEmpleado(int id_empleado, String contra, String rol) {
 
         try {
@@ -1945,7 +1996,6 @@ public class Metodos {
         }
 
     }
-
     public void Editar_MembresiasBD(String nombreAntiguo, String descripcionAntigua, int precioAntiguo, String nombre, int precio, String descripcion) {
 
         Connection conn = new Conexion().conectar();
@@ -2007,7 +2057,6 @@ public class Metodos {
             }
         }
     }
-
     public void eliminarMembresias(String nombreMembresia) {
         Conexion con = new Conexion();
         Connection cn = null;
@@ -2085,7 +2134,6 @@ public class Metodos {
             }
         }
     }
-
     public void Editar_SucursalesBD(String nombreAntiguo, String direccion_A, java.sql.Date fecha_A, String nombre_N, String direccion_N, java.sql.Date Fecha_N) {
 
         String sqlActualizacion = "UPDATE gimnasio SET nombre = ?, direccion = ?, fecha_apertura = ? WHERE nombre = ? AND direccion = ? AND fecha_apertura = ?";
@@ -2115,7 +2163,6 @@ public class Metodos {
             e.printStackTrace();
         }
     }
-
     public void ActualizarFechaSucursal(String nombreS) {
 
         String consultaEmpleados = "select distinct fecha_apertura, fecha_cierre from gimnasio where nombre = ?";
@@ -2164,7 +2211,6 @@ public class Metodos {
             JOptionPane.showMessageDialog(null, "Error al actualizar la fecha del empleado: " + e.getMessage());
         }
     }
-
     public void eliminarSucursales(String nombreS) {
         Conexion con = new Conexion();
         Connection cn = null;
